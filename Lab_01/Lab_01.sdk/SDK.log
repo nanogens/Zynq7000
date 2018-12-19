@@ -4,3 +4,66 @@
 14:56:55 INFO  : Successfully done setting XSCT server connection channel  
 14:56:55 INFO  : Successfully done setting SDK workspace  
 14:56:55 INFO  : Processing command line option -hwspec D:/Github/Zynq7000/Lab_01/Lab_01.sdk/design_1_wrapper.hdf.
+16:36:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:36:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:39:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:40:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:44:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:49:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:49:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:50:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:50:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:54:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:54:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:55:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:56:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:58:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:58:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:59:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:59:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+17:01:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+17:03:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:03:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+17:09:07 ERROR : Failed to connect to hardware server on host '192.168.1.10' and port '3121'.
+Reason: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+17:14:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:14:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+17:16:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:16:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
