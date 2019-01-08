@@ -1,4 +1,4 @@
-14:24:34 **** Incremental Build of configuration Debug for project Lab_01 ****
+13:14:41 **** Build of configuration Debug for project Lab_01 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -6,6 +6,11 @@ a9-linaro-pre-build-step
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Lab_01_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Lab_01_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building target: Lab_01.elf'
 'Invoking: ARM v7 gcc linker'
@@ -19,5 +24,5 @@ arm-none-eabi-size Lab_01.elf  |tee "Lab_01.elf.size"
 'Finished building: Lab_01.elf.size'
 ' '
 
-14:24:35 Build Finished (took 1s.204ms)
+13:14:42 Build Finished (took 1s.442ms)
 

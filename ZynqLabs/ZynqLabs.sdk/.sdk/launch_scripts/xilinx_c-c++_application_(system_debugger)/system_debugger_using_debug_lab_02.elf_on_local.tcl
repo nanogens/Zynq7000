@@ -12,4 +12,5 @@ rst -processor
 targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
 dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
 configparams force-mem-access 0
-bpadd -addr &main
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
