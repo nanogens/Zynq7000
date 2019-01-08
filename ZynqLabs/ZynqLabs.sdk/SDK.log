@@ -1,0 +1,762 @@
+14:15:40 INFO  : Registering command handlers for SDK TCF services
+14:15:41 INFO  : Launching XSCT server: xsct.bat -interactive D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\temp_xsdb_launch_script.tcl
+14:15:43 INFO  : XSCT server has started successfully.
+14:15:43 INFO  : Successfully done setting XSCT server connection channel  
+14:15:43 INFO  : Successfully done setting SDK workspace  
+14:15:43 INFO  : Processing command line option -hwspec D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper.hdf.
+14:24:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:24:38 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+14:24:38 INFO  : 'jtag frequency' command is executed.
+14:24:38 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:24:38 INFO  : Context for 'APU' is selected.
+14:24:38 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:24:38 INFO  : 'configparams force-mem-access 1' command is executed.
+14:24:38 INFO  : Context for 'APU' is selected.
+14:24:38 INFO  : 'stop' command is executed.
+14:24:38 INFO  : 'ps7_init' command is executed.
+14:24:38 INFO  : 'ps7_post_config' command is executed.
+14:24:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:24:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:39 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_01/Debug/Lab_01.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:24:39 INFO  : 'configparams force-mem-access 0' command is executed.
+14:24:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_01/Debug/Lab_01.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:24:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:39 INFO  : 'con' command is executed.
+14:24:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+14:24:39 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_01.elf_on_local.tcl'
+14:43:34 INFO  : Disconnected from the channel tcfchan#1.
+14:43:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:43:36 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+14:43:36 INFO  : 'jtag frequency' command is executed.
+14:43:36 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:43:36 INFO  : Context for 'APU' is selected.
+14:43:37 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:43:37 INFO  : 'configparams force-mem-access 1' command is executed.
+14:43:37 INFO  : Context for 'APU' is selected.
+14:43:37 INFO  : 'stop' command is executed.
+14:43:38 INFO  : 'ps7_init' command is executed.
+14:43:38 INFO  : 'ps7_post_config' command is executed.
+14:43:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:43:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:43:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:43:38 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:43:38 INFO  : 'configparams force-mem-access 0' command is executed.
+14:43:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:43:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:43:38 INFO  : 'con' command is executed.
+14:43:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+14:43:38 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:31:41 INFO  : Disconnected from the channel tcfchan#2.
+18:31:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:42 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:31:42 INFO  : 'jtag frequency' command is executed.
+18:31:42 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:31:42 INFO  : Context for 'APU' is selected.
+18:31:44 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:31:44 INFO  : 'configparams force-mem-access 1' command is executed.
+18:31:44 INFO  : Context for 'APU' is selected.
+18:31:44 INFO  : 'stop' command is executed.
+18:31:45 INFO  : 'ps7_init' command is executed.
+18:31:45 INFO  : 'ps7_post_config' command is executed.
+18:31:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:31:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:45 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:31:45 INFO  : 'configparams force-mem-access 0' command is executed.
+18:31:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:31:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:45 INFO  : 'con' command is executed.
+18:31:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:31:45 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:32:39 INFO  : Disconnected from the channel tcfchan#3.
+18:32:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:32:41 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:32:41 INFO  : 'jtag frequency' command is executed.
+18:32:41 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:32:41 INFO  : Context for 'APU' is selected.
+18:32:42 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:32:42 INFO  : 'configparams force-mem-access 1' command is executed.
+18:32:42 INFO  : Context for 'APU' is selected.
+18:32:42 INFO  : 'stop' command is executed.
+18:32:43 INFO  : 'ps7_init' command is executed.
+18:32:43 INFO  : 'ps7_post_config' command is executed.
+18:32:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:32:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:43 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:32:43 INFO  : 'configparams force-mem-access 0' command is executed.
+18:32:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:32:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:43 INFO  : 'con' command is executed.
+18:32:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:32:43 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:33:03 INFO  : Disconnected from the channel tcfchan#4.
+18:33:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:05 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:33:05 INFO  : 'jtag frequency' command is executed.
+18:33:05 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:33:05 INFO  : Context for 'APU' is selected.
+18:33:06 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:33:06 INFO  : 'configparams force-mem-access 1' command is executed.
+18:33:06 INFO  : Context for 'APU' is selected.
+18:33:06 INFO  : 'stop' command is executed.
+18:33:07 INFO  : 'ps7_init' command is executed.
+18:33:07 INFO  : 'ps7_post_config' command is executed.
+18:33:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:33:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:07 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:33:07 INFO  : 'configparams force-mem-access 0' command is executed.
+18:33:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:33:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:07 INFO  : 'con' command is executed.
+18:33:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:33:07 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:47:36 INFO  : Disconnected from the channel tcfchan#5.
+18:47:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:47:37 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:47:37 INFO  : 'jtag frequency' command is executed.
+18:47:37 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:47:37 INFO  : Context for 'APU' is selected.
+18:47:39 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:47:39 INFO  : 'configparams force-mem-access 1' command is executed.
+18:47:39 INFO  : Context for 'APU' is selected.
+18:47:39 INFO  : 'stop' command is executed.
+18:47:39 INFO  : 'ps7_init' command is executed.
+18:47:39 INFO  : 'ps7_post_config' command is executed.
+18:47:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:47:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:40 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:47:40 INFO  : 'configparams force-mem-access 0' command is executed.
+18:47:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:47:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:40 INFO  : 'con' command is executed.
+18:47:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:47:40 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:48:33 INFO  : Disconnected from the channel tcfchan#6.
+18:48:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:48:34 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:48:34 INFO  : 'jtag frequency' command is executed.
+18:48:34 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:48:34 INFO  : Context for 'APU' is selected.
+18:48:36 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:48:36 INFO  : 'configparams force-mem-access 1' command is executed.
+18:48:36 INFO  : Context for 'APU' is selected.
+18:48:36 INFO  : 'stop' command is executed.
+18:48:36 INFO  : 'ps7_init' command is executed.
+18:48:36 INFO  : 'ps7_post_config' command is executed.
+18:48:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:48:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:48:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:48:37 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:48:37 INFO  : 'configparams force-mem-access 0' command is executed.
+18:48:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:48:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:48:37 INFO  : 'con' command is executed.
+18:48:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:48:37 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:49:08 INFO  : Disconnected from the channel tcfchan#7.
+18:49:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:49:09 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:49:09 INFO  : 'jtag frequency' command is executed.
+18:49:09 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:49:09 INFO  : Context for 'APU' is selected.
+18:49:11 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:49:11 INFO  : 'configparams force-mem-access 1' command is executed.
+18:49:11 INFO  : Context for 'APU' is selected.
+18:49:11 INFO  : 'stop' command is executed.
+18:49:11 INFO  : 'ps7_init' command is executed.
+18:49:11 INFO  : 'ps7_post_config' command is executed.
+18:49:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:49:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:49:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:49:12 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:49:12 INFO  : 'configparams force-mem-access 0' command is executed.
+18:49:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:49:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:49:12 INFO  : 'con' command is executed.
+18:49:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:49:12 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+18:58:56 INFO  : Disconnected from the channel tcfchan#8.
+18:58:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:58:57 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+18:58:57 INFO  : 'jtag frequency' command is executed.
+18:58:57 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:58:57 INFO  : Context for 'APU' is selected.
+18:58:59 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:58:59 INFO  : 'configparams force-mem-access 1' command is executed.
+18:58:59 INFO  : Context for 'APU' is selected.
+18:58:59 INFO  : 'stop' command is executed.
+18:58:59 INFO  : 'ps7_init' command is executed.
+18:59:00 INFO  : 'ps7_post_config' command is executed.
+18:59:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:59:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:00 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:59:00 INFO  : 'configparams force-mem-access 0' command is executed.
+18:59:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:59:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:00 INFO  : 'con' command is executed.
+18:59:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+18:59:00 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:32:57 INFO  : Disconnected from the channel tcfchan#9.
+19:32:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:32:58 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:32:58 INFO  : 'jtag frequency' command is executed.
+19:32:58 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:32:58 INFO  : Context for 'APU' is selected.
+19:33:00 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:33:00 INFO  : 'configparams force-mem-access 1' command is executed.
+19:33:00 INFO  : Context for 'APU' is selected.
+19:33:00 INFO  : 'stop' command is executed.
+19:33:01 INFO  : 'ps7_init' command is executed.
+19:33:01 INFO  : 'ps7_post_config' command is executed.
+19:33:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:33:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:01 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:33:01 INFO  : 'configparams force-mem-access 0' command is executed.
+19:33:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:33:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:01 INFO  : 'con' command is executed.
+19:33:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:33:01 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:33:40 INFO  : Disconnected from the channel tcfchan#10.
+19:33:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:33:42 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:33:42 INFO  : 'jtag frequency' command is executed.
+19:33:42 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:33:42 INFO  : Context for 'APU' is selected.
+19:33:44 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:33:44 INFO  : 'configparams force-mem-access 1' command is executed.
+19:33:44 INFO  : Context for 'APU' is selected.
+19:33:44 INFO  : 'stop' command is executed.
+19:33:44 INFO  : 'ps7_init' command is executed.
+19:33:44 INFO  : 'ps7_post_config' command is executed.
+19:33:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:33:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:44 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:33:44 INFO  : 'configparams force-mem-access 0' command is executed.
+19:33:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:33:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:44 INFO  : 'con' command is executed.
+19:33:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:33:44 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:33:59 INFO  : Disconnected from the channel tcfchan#11.
+19:34:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:34:00 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:34:00 INFO  : 'jtag frequency' command is executed.
+19:34:00 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:34:00 INFO  : Context for 'APU' is selected.
+19:34:02 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:34:02 INFO  : 'configparams force-mem-access 1' command is executed.
+19:34:02 INFO  : Context for 'APU' is selected.
+19:34:02 INFO  : 'stop' command is executed.
+19:34:02 INFO  : 'ps7_init' command is executed.
+19:34:02 INFO  : 'ps7_post_config' command is executed.
+19:34:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:34:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:34:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:34:02 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:34:02 INFO  : 'configparams force-mem-access 0' command is executed.
+19:34:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:34:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:34:03 INFO  : 'con' command is executed.
+19:34:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:34:03 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:35:17 INFO  : Disconnected from the channel tcfchan#12.
+19:35:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:35:18 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:35:18 INFO  : 'jtag frequency' command is executed.
+19:35:18 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:35:18 INFO  : Context for 'APU' is selected.
+19:35:21 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:35:21 INFO  : 'configparams force-mem-access 1' command is executed.
+19:35:21 INFO  : Context for 'APU' is selected.
+19:35:21 INFO  : 'stop' command is executed.
+19:35:21 INFO  : 'ps7_init' command is executed.
+19:35:21 INFO  : 'ps7_post_config' command is executed.
+19:35:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:35:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:35:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:35:21 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:35:21 INFO  : 'configparams force-mem-access 0' command is executed.
+19:35:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:35:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:35:21 INFO  : 'con' command is executed.
+19:35:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:35:21 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:38:33 INFO  : Disconnected from the channel tcfchan#13.
+19:38:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:38:34 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:38:34 INFO  : 'jtag frequency' command is executed.
+19:38:34 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:38:34 INFO  : Context for 'APU' is selected.
+19:38:36 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:38:36 INFO  : 'configparams force-mem-access 1' command is executed.
+19:38:36 INFO  : Context for 'APU' is selected.
+19:38:36 INFO  : 'stop' command is executed.
+19:38:37 INFO  : 'ps7_init' command is executed.
+19:38:37 INFO  : 'ps7_post_config' command is executed.
+19:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:38:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:38:37 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:38:37 INFO  : 'configparams force-mem-access 0' command is executed.
+19:38:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:38:37 INFO  : 'con' command is executed.
+19:38:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:38:37 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:40:15 INFO  : Disconnected from the channel tcfchan#14.
+19:40:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:40:17 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:40:17 INFO  : 'jtag frequency' command is executed.
+19:40:17 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:40:17 INFO  : Context for 'APU' is selected.
+19:40:18 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:40:18 INFO  : 'configparams force-mem-access 1' command is executed.
+19:40:18 INFO  : Context for 'APU' is selected.
+19:40:18 INFO  : 'stop' command is executed.
+19:40:19 INFO  : 'ps7_init' command is executed.
+19:40:19 INFO  : 'ps7_post_config' command is executed.
+19:40:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:40:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:19 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:40:19 INFO  : 'configparams force-mem-access 0' command is executed.
+19:40:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:40:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:19 INFO  : 'con' command is executed.
+19:40:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:40:19 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:40:39 INFO  : Disconnected from the channel tcfchan#15.
+19:40:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:40:41 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:40:41 INFO  : 'jtag frequency' command is executed.
+19:40:41 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:40:41 INFO  : Context for 'APU' is selected.
+19:40:42 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:40:42 INFO  : 'configparams force-mem-access 1' command is executed.
+19:40:42 INFO  : Context for 'APU' is selected.
+19:40:42 INFO  : 'stop' command is executed.
+19:40:43 INFO  : 'ps7_init' command is executed.
+19:40:43 INFO  : 'ps7_post_config' command is executed.
+19:40:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:40:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:43 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:40:43 INFO  : 'configparams force-mem-access 0' command is executed.
+19:40:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:40:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:40:43 INFO  : 'con' command is executed.
+19:40:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:40:43 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:41:21 INFO  : Disconnected from the channel tcfchan#16.
+19:41:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:23 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:41:23 INFO  : 'jtag frequency' command is executed.
+19:41:23 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:41:23 INFO  : Context for 'APU' is selected.
+19:41:25 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:41:25 INFO  : 'configparams force-mem-access 1' command is executed.
+19:41:25 INFO  : Context for 'APU' is selected.
+19:41:25 INFO  : 'stop' command is executed.
+19:41:25 INFO  : 'ps7_init' command is executed.
+19:41:25 INFO  : 'ps7_post_config' command is executed.
+19:41:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:41:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:41:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:41:25 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:41:25 INFO  : 'configparams force-mem-access 0' command is executed.
+19:41:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:41:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:41:25 INFO  : 'con' command is executed.
+19:41:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:41:25 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:50:15 INFO  : Disconnected from the channel tcfchan#17.
+19:50:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:50:16 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A1F851' is selected.
+19:50:16 INFO  : 'jtag frequency' command is executed.
+19:50:16 INFO  : Sourcing of 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:50:16 INFO  : Context for 'APU' is selected.
+19:50:18 INFO  : Hardware design information is loaded from 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:50:18 INFO  : 'configparams force-mem-access 1' command is executed.
+19:50:18 INFO  : Context for 'APU' is selected.
+19:50:18 INFO  : 'stop' command is executed.
+19:50:18 INFO  : 'ps7_init' command is executed.
+19:50:18 INFO  : 'ps7_post_config' command is executed.
+19:50:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:50:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:19 INFO  : The application 'D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:50:19 INFO  : 'configparams force-mem-access 0' command is executed.
+19:50:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+loadhw -hw D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+dow D:/Github/Zynq7000/ZynqLabs/ZynqLabs.sdk/Lab_02/Debug/Lab_02.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:50:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:19 INFO  : 'con' command is executed.
+19:50:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A1F851"} -index 0
+con
+----------------End of Script----------------
+
+19:50:19 INFO  : Launch script is exported to file 'D:\Github\Zynq7000\ZynqLabs\ZynqLabs.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab_02.elf_on_local.tcl'
+19:59:28 INFO  : Disconnected from the channel tcfchan#18.
