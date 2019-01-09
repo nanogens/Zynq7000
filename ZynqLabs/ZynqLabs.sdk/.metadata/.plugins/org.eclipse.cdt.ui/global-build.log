@@ -1,19 +1,9 @@
-14:33:09 **** Incremental Build of configuration Debug for project Lab_05 ****
+17:39:50 **** Incremental Build of configuration Debug for project Lab_06 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for 'main-build'.
-14:33:15 **** Incremental Build of configuration Debug for project Lab_05 ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for 'main-build'.
-14:33:56 **** Incremental Build of configuration Debug for project Lab_05 ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for 'main-build'.
-14:34:30 **** Incremental Build of configuration Debug for project Lab_05 ****
+17:40:04 **** Incremental Build of configuration Debug for project Lab_06 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '

@@ -1,4 +1,4 @@
-13:14:41 **** Build of configuration Debug for project Lab_01 ****
+16:11:00 **** Build of configuration Debug for project Lab_01 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -24,5 +24,5 @@ arm-none-eabi-size Lab_01.elf  |tee "Lab_01.elf.size"
 'Finished building: Lab_01.elf.size'
 ' '
 
-13:14:42 Build Finished (took 1s.442ms)
+16:11:02 Build Finished (took 1s.610ms)
 

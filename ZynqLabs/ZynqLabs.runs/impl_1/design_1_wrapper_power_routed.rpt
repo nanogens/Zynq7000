@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Jan  8 13:04:39 2019
+| Date             : Wed Jan  9 16:06:25 2019
 | Host             : 63L-MT8825 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,8 +53,8 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.008 |        3 |       --- |             --- |
-| Slice Logic              |     0.006 |     4202 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     1354 |     17600 |            7.69 |
+| Slice Logic              |     0.006 |     4200 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     1353 |     17600 |            7.69 |
 |   LUT as Distributed RAM |    <0.001 |      100 |      6000 |            1.67 |
 |   Register               |    <0.001 |     1857 |     35200 |            5.28 |
 |   LUT as Shift Register  |    <0.001 |      134 |      6000 |            2.23 |
