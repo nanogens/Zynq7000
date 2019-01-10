@@ -1,32 +1,8 @@
-16:11:31 **** Build of configuration Debug for project Lab_02 ****
+19:06:57 **** Incremental Build of configuration Debug for project Lab_02 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/Lab_02.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Lab_02.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Lab_02_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/Lab_02.d" -MT"src/Lab_02.o" -o "src/Lab_02.o" "../src/Lab_02.c"
-../src/Lab_02.c: In function 'main':
-../src/Lab_02.c:59:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
-  int Status;
-      ^~~~~~
-'Finished building: ../src/Lab_02.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Lab_02_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building target: Lab_02.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Lab_02_bsp/ps7_cortexa9_0/lib -o "Lab_02.elf"  ./src/Lab_02.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Lab_02.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size Lab_02.elf  |tee "Lab_02.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  77868	   2588	  23344	 103800	  19578	Lab_02.elf
-'Finished building: Lab_02.elf.size'
-' '
+make: Nothing to be done for 'main-build'.
 
-16:11:33 Build Finished (took 1s.454ms)
+19:06:57 Build Finished (took 269ms)
 
