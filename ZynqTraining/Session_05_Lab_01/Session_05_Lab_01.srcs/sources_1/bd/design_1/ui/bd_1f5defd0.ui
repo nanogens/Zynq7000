@@ -1,0 +1,13 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace inst axi_timer_0 -pg 1 -lvl 1 -y 70 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -y -160 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 1 -y -160 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 3 -y 80 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 2 -y -270 -defaultsOSRD
+levelinfo -pg 1 -140 0 260 540 820 -top -380 -bot 480
+"
+}
+
