@@ -1,0 +1,140 @@
+
+
+================================================================
+== Vivado HLS Report for 'axi_stream_gpio'
+================================================================
+* Date:           Mon Jan 21 18:40:08 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        axi_stream_gpio
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z010clg400-3
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.008|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|    1|    1|    1|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %InputData_V), !map !33"   --->   Operation 3 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %OutputData), !map !39"   --->   Operation 4 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !45"   --->   Operation 5 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([16 x i8]* @axi_stream_gpio_str) nounwind"   --->   Operation 6 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%InputData_V_read = call i1 @_ssdm_op_Read.ap_vld.i1(i1 %InputData_V)" [C/axi_stream_gpio.cpp:5]   --->   Operation 7 'read' 'InputData_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1 %InputData_V, [7 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [C/axi_stream_gpio.cpp:7]   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %OutputData, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [C/axi_stream_gpio.cpp:7]   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmpOutput_load = load i32* @tmpOutput, align 4" [C/axi_stream_gpio.cpp:10]   --->   Operation 10 'load' 'tmpOutput_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns) (grouped into LUT with out node tmp_1)   --->   "%tmp_4 = shl i32 %tmpOutput_load, 1" [C/axi_stream_gpio.cpp:10]   --->   Operation 11 'shl' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node tmp_1)   --->   "%tmp = select i1 %InputData_V_read, i32 -1, i32 0" [C/axi_stream_gpio.cpp:10]   --->   Operation 12 'select' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (1.91ns) (out node of the LUT)   --->   "%tmp_1 = add i32 %tmp, %tmp_4" [C/axi_stream_gpio.cpp:10]   --->   Operation 13 'add' 'tmp_1' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%bitCounter_load = load i32* @bitCounter, align 4" [C/axi_stream_gpio.cpp:11]   --->   Operation 14 'load' 'bitCounter_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.91ns)   --->   "%tmp_2 = add nsw i32 1, %bitCounter_load" [C/axi_stream_gpio.cpp:11]   --->   Operation 15 'add' 'tmp_2' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (1.91ns)   --->   "%tmp_3 = icmp eq i32 %tmp_2, 32" [C/axi_stream_gpio.cpp:13]   --->   Operation 16 'icmp' 'tmp_3' <Predicate = true> <Delay = 1.91> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (1.17ns)   --->   "br i1 %tmp_3, label %1, label %mergeST1" [C/axi_stream_gpio.cpp:13]   --->   Operation 17 'br' <Predicate = true> <Delay = 1.17>
+ST_1 : Operation 18 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %OutputData, i32 %tmp_1)" [C/axi_stream_gpio.cpp:15]   --->   Operation 18 'write' <Predicate = (tmp_3)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.17>
+ST_2 : Operation 19 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %OutputData, i32 %tmp_1)" [C/axi_stream_gpio.cpp:15]   --->   Operation 19 'write' <Predicate = (tmp_3)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 20 [1/1] (1.17ns)   --->   "br label %mergeST1" [C/axi_stream_gpio.cpp:18]   --->   Operation 20 'br' <Predicate = (tmp_3)> <Delay = 1.17>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmpOutput_new = phi i32 [ 0, %1 ], [ %tmp_1, %0 ]" [C/axi_stream_gpio.cpp:10]   --->   Operation 21 'phi' 'tmpOutput_new' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%bitCounter_new = phi i32 [ 0, %1 ], [ %tmp_2, %0 ]" [C/axi_stream_gpio.cpp:11]   --->   Operation 22 'phi' 'bitCounter_new' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "store i32 %bitCounter_new, i32* @bitCounter, align 4" [C/axi_stream_gpio.cpp:11]   --->   Operation 23 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "store i32 %tmpOutput_new, i32* @tmpOutput, align 4" [C/axi_stream_gpio.cpp:10]   --->   Operation 24 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "ret i32 0" [C/axi_stream_gpio.cpp:20]   --->   Operation 25 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 5.01ns
+The critical path consists of the following:
+	'load' operation ('bitCounter_load', C/axi_stream_gpio.cpp:11) on static variable 'bitCounter' [16]  (0 ns)
+	'add' operation ('tmp_2', C/axi_stream_gpio.cpp:11) [17]  (1.92 ns)
+	'icmp' operation ('tmp_3', C/axi_stream_gpio.cpp:13) [18]  (1.92 ns)
+	multiplexor before 'phi' operation ('tmpOutput_new', C/axi_stream_gpio.cpp:10) with incoming values : ('tmp_1', C/axi_stream_gpio.cpp:10) [24]  (1.18 ns)
+
+ <State 2>: 1.18ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('tmpOutput_new', C/axi_stream_gpio.cpp:10) with incoming values : ('tmp_1', C/axi_stream_gpio.cpp:10) [24]  (1.18 ns)
+	'phi' operation ('tmpOutput_new', C/axi_stream_gpio.cpp:10) with incoming values : ('tmp_1', C/axi_stream_gpio.cpp:10) [24]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

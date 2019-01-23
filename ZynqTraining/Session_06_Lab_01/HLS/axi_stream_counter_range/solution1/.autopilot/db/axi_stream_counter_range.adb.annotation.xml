@@ -1,0 +1,7 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="13" filename="C/axi_stream_counter_range.cpp" linenumber="7" name="counterValue_cast" contextFuncName="axi_stream_counter_range" moduleName="axi_stream_counter_range" rtlName="counterValue_cast_fu_54_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="14" filename="C/axi_stream_counter_range.cpp" linenumber="7" name="tmp" contextFuncName="axi_stream_counter_range" moduleName="axi_stream_counter_range" rtlName="tmp_fu_59_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="15" filename="C/axi_stream_counter_range.cpp" linenumber="7" name="counterValue_1" contextFuncName="axi_stream_counter_range" moduleName="axi_stream_counter_range" rtlName="counterValue_1_fu_64_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="38" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<\/annotationInfo>
+</annotationInfo>

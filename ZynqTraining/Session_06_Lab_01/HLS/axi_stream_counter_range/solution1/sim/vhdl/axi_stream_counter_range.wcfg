@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="axi_stream_counter_range.wdb" id="1">
+         <top_modules>
+            <top_module name="apatb_axi_stream_counter_range_top" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="group1" type="group">
+      <obj_property name="label">Design Top Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group2" type="group">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group3" type="group">
+            <obj_property name="label">return(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_return" type="array">
+               <obj_property name="ElementShortName">ap_return[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ap_return[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group5" type="group">
+            <obj_property name="label">counter_output(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/counter_output_TREADY" type="logic">
+               <obj_property name="ElementShortName">counter_output_TREADY</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/counter_output_TVALID" type="logic">
+               <obj_property name="ElementShortName">counter_output_TVALID</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/counter_output_TDATA" type="array">
+               <obj_property name="ElementShortName">counter_output_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group9" type="group">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group10" type="group">
+            <obj_property name="label">count_range(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/count_range_TREADY" type="logic">
+               <obj_property name="ElementShortName">count_range_TREADY</obj_property>
+               <obj_property name="ObjectShortName">count_range_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/count_range_TVALID" type="logic">
+               <obj_property name="ElementShortName">count_range_TVALID</obj_property>
+               <obj_property name="ObjectShortName">count_range_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/count_range_TDATA" type="array">
+               <obj_property name="ElementShortName">count_range_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">count_range_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group14" type="group">
+         <obj_property name="label">Block-level IO Handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_start" type="logic">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_done" type="logic">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_idle" type="logic">
+            <obj_property name="ElementShortName">ap_idle</obj_property>
+            <obj_property name="ObjectShortName">ap_idle</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_ready" type="logic">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group19" type="group">
+         <obj_property name="label">Reset</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_rst_n" type="logic">
+            <obj_property name="ElementShortName">ap_rst_n</obj_property>
+            <obj_property name="ObjectShortName">ap_rst_n</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group21" type="group">
+         <obj_property name="label">Clock</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_axi_stream_counter_range_top/AESL_inst_axi_stream_counter_range/ap_clk" type="logic">
+            <obj_property name="ElementShortName">ap_clk</obj_property>
+            <obj_property name="ObjectShortName">ap_clk</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group23" type="group">
+      <obj_property name="label">Test Bench Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group24" type="group">
+         <obj_property name="label">Internal Signals</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group25" type="group">
+            <obj_property name="label">Simulation Status</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/AUTOTB_TRANSACTION_NUM" type="other">
+               <obj_property name="ElementShortName">AUTOTB_TRANSACTION_NUM</obj_property>
+               <obj_property name="ObjectShortName">AUTOTB_TRANSACTION_NUM</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/ready_cnt" type="array">
+               <obj_property name="ElementShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/done_cnt" type="array">
+               <obj_property name="ElementShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group26" type="group">
+            <obj_property name="label">Port Depth</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/LENGTH_count_range" type="other">
+               <obj_property name="ElementShortName">LENGTH_count_range</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_count_range</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/LENGTH_counter_output" type="other">
+               <obj_property name="ElementShortName">LENGTH_counter_output</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_counter_output</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/LENGTH_ap_return" type="other">
+               <obj_property name="ElementShortName">LENGTH_ap_return</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_ap_return</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group33" type="group">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group34" type="group">
+            <obj_property name="label">return(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/ap_return" type="array">
+               <obj_property name="ElementShortName">ap_return[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ap_return[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group36" type="group">
+            <obj_property name="label">counter_output(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/counter_output_TREADY" type="logic">
+               <obj_property name="ElementShortName">counter_output_TREADY</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/counter_output_TVALID" type="logic">
+               <obj_property name="ElementShortName">counter_output_TVALID</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/counter_output_TDATA" type="array">
+               <obj_property name="ElementShortName">counter_output_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">counter_output_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group40" type="group">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group41" type="group">
+            <obj_property name="label">count_range(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/count_range_TREADY" type="logic">
+               <obj_property name="ElementShortName">count_range_TREADY</obj_property>
+               <obj_property name="ObjectShortName">count_range_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/count_range_TVALID" type="logic">
+               <obj_property name="ElementShortName">count_range_TVALID</obj_property>
+               <obj_property name="ObjectShortName">count_range_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_axi_stream_counter_range_top/count_range_TDATA" type="array">
+               <obj_property name="ElementShortName">count_range_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">count_range_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

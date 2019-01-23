@@ -1,5 +1,0 @@
-<annotationInfo>
-<annotationInfo>
-<item  id="8" filename="C/axi_stream_counter.cpp" linenumber="7" name="counterValue_assign" contextFuncName="axi_stream_counter" moduleName="axi_stream_counter" rtlName="counterValue_assign_fu_35_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01"><\/item>
-<\/annotationInfo>
-</annotationInfo>

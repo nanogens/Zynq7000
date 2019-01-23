@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName axi_stream_counter.cpp_pre.cpp.tb.cpp

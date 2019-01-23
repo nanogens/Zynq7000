@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"axi_stream_gpio": {
+			"proto_instances": {
+			}
+		}
+	}
+}

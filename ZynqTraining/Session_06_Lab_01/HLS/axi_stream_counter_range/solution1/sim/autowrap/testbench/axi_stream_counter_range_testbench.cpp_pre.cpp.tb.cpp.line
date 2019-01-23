@@ -1,0 +1,50 @@
+#pragma line 1 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+#pragma line 1 "<built-in>"
+#pragma line 1 "<command-line>"
+#pragma line 1 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+#pragma empty_line
+#pragma empty_line
+int axi_stream_counter_range(int, int *);
+#pragma empty_line
+
+#ifndef HLS_FASTSIM
+#pragma line 5 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+
+#ifndef HLS_FASTSIM
+#include "apatb_axi_stream_counter_range.h"
+#endif
+
+#pragma line 5 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+int main(void)
+{
+ int i;
+ int y;
+#pragma empty_line
+ for (i = 0; i < 100; i++)
+ {
+  
+#ifndef HLS_FASTSIM
+#define axi_stream_counter_range AESL_WRAP_axi_stream_counter_range
+#endif
+
+#pragma line 12 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+
+#ifndef HLS_FASTSIM
+#define axi_stream_counter_range AESL_WRAP_axi_stream_counter_range
+#endif
+
+#pragma line 12 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+axi_stream_counter_range
+#undef axi_stream_counter_range
+#pragma line 12 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+
+#undef axi_stream_counter_range
+#pragma line 12 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"
+(i, &y);
+ }
+ return 0;
+#pragma empty_line
+#pragma empty_line
+}
+#endif
+#pragma line 17 "D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/simC/axi_stream_counter_range_testbench.cpp"

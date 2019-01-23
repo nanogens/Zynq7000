@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="axi_stream_counter.cpp" path="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS\C\axi_stream_counter.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="axi_stream_counter_testbench.cpp" path="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS\simC\axi_stream_counter_testbench.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

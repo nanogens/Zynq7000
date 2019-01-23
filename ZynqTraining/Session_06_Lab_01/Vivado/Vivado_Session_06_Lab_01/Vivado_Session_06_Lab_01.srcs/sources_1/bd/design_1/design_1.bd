@@ -1,0 +1,33 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z010clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "axi_stream_counter_0": "",
+      "floating_point_0": ""
+    },
+    "components": {
+      "axi_stream_counter_0": {
+        "vlnv": "xilinx.com:hls:axi_stream_counter:1.0",
+        "xci_name": "design_1_axi_stream_counter_0_0"
+      },
+      "floating_point_0": {
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "xci_name": "design_1_floating_point_0_0"
+      }
+    },
+    "interface_nets": {
+      "axi_stream_counter_0_counter_output": {
+        "interface_ports": [
+          "floating_point_0/S_AXIS_A",
+          "axi_stream_counter_0/counter_output"
+        ]
+      }
+    }
+  }
+}

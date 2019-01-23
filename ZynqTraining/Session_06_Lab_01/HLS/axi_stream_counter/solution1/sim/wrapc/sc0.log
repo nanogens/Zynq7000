@@ -1,0 +1,5 @@
+   Build using "C:/xilinx/Vivado/2018.3/msys64/mingw64/bin/g++"
+   Compiling axi_stream_counter.cpp_pre.cpp.tb.cpp
+   Compiling axi_stream_counter_testbench.cpp_pre.cpp.tb.cpp
+   Compiling apatb_axi_stream_counter.cpp
+   Generating cosim.tv.exe

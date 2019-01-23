@@ -1,0 +1,2 @@
+current_fileset
+open_wave_database axi_stream_counter_range.wdb

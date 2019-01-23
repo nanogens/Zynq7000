@@ -1,0 +1,19 @@
+INFO: [HLS 200-10] Running 'C:/xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'MT8825' on host '63l-mt8825' (Windows NT_amd64 version 6.2) on Mon Jan 21 18:42:37 -0500 2019
+INFO: [HLS 200-10] In directory 'D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS'
+INFO: [HLS 200-10] Opening project 'D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/axi_stream_gpio'.
+INFO: [HLS 200-10] Opening solution 'D:/Github/Zynq7000/ZynqTraining/Session_06_Lab_01/HLS/axi_stream_gpio/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z010clg400-3'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/xilinx/Vivado/2018.3/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 21 18:42:44 2019...

@@ -1,0 +1,9 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="13" filename="C/axi_stream_gpio.cpp" linenumber="10" name="tmp_4" contextFuncName="axi_stream_gpio" moduleName="axi_stream_gpio" rtlName="tmp_4_fu_73_p2" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="14" filename="C/axi_stream_gpio.cpp" linenumber="10" name="tmp" contextFuncName="axi_stream_gpio" moduleName="axi_stream_gpio" rtlName="tmp_fu_79_p3" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="2" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="15" filename="C/axi_stream_gpio.cpp" linenumber="10" name="tmp_1" contextFuncName="axi_stream_gpio" moduleName="axi_stream_gpio" rtlName="tmp_1_fu_87_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="17" filename="C/axi_stream_gpio.cpp" linenumber="11" name="tmp_2" contextFuncName="axi_stream_gpio" moduleName="axi_stream_gpio" rtlName="tmp_2_fu_98_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<item  id="18" filename="C/axi_stream_gpio.cpp" linenumber="13" name="tmp_3" contextFuncName="axi_stream_gpio" moduleName="axi_stream_gpio" rtlName="tmp_3_fu_104_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="D:\Github\Zynq7000\ZynqTraining\Session_06_Lab_01\HLS"><\/item>
+<\/annotationInfo>
+</annotationInfo>

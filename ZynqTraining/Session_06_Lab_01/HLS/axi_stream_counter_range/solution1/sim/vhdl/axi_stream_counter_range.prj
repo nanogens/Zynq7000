@@ -1,0 +1,7 @@
+vhdl xil_defaultlib "AESL_sim_pkg.vhd"
+sv work "glbl.v"
+vhdl xil_defaultlib "AESL_axi_s_counter_output.vhd"
+vhdl xil_defaultlib "AESL_axi_s_count_range.vhd"
+vhdl xil_defaultlib "axi_stream_counter_range.autotb.vhd"
+vhdl xil_defaultlib "axi_stream_counter_range.vhd"
+
