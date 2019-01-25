@@ -50,10 +50,7 @@ startgroup
 set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1}] [get_bd_cells processing_system7_0]
 endgroup
 
-# (AR) Click on Zynq, enable a 2nd clock domain, set it to 200Mhz
-startgroup
-set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200} CONFIG.PCW_EN_CLK1_PORT {1}] [get_bd_cells processing_system7_0]
-endgroup
+
 
 #####################################################################################
 
