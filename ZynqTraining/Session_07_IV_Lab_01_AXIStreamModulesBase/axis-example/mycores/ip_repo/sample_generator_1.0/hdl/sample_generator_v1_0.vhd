@@ -72,7 +72,10 @@ architecture arch_imp of sample_generator_v1_0 is
 		);
 		port (
 		FRAMESIZE : in std_logic;
-		AXI_EN : in std_logic;
+		
+		--AXI_EN : in std_logic;
+		EN : in std_logic;
+		
 		M_AXIS_ACLK	: in std_logic;
 		M_AXIS_ARESETN	: in std_logic;
 		M_AXIS_TVALID	: out std_logic;
