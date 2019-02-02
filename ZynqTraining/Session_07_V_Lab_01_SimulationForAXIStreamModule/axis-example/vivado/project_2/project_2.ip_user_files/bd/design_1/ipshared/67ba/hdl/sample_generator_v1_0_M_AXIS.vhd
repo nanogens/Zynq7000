@@ -53,60 +53,62 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	-- to set tlast
 	signal packetCounter : std_logic_vector(7 downto 0);
 	
-    FUNCTIONS : process(M_AXIS_ACLK) is
+
+	begin
+    FUNCTIONS : process(M_AXIS_ACLK) 	
 	begin
 		-- counterR circuit
-		if clk'event and M_AXIS_ACLK = '1' then
+		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
-			counterR <= 0;
+			counterR <= (others => '0');
 		  end if;
 		else
 		  if M_AXIS_TVALID = '1' AND M_AXIS_TREADY = '1' then
-		    counterR <= counterR + 1;
+		    counterR <= std_logic_vector(unsigned(counterR) + 1);
 		  end if;
 		end if;
 		----------------------------------------------
 		
 		-- circuit for initializing module after X number of clock cycles
-		if clk'event and M_AXIS_ACLK = '1' then
+		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
 		    sampleGeneratorEnR <= '0';
-			afterResetCycleCounterR <= 0;
+			afterResetCycleCounterR <= (others => '0');
 		  end if;
-		elif sampleGeneratorEnR = '0' then
-		    afterResetCycleCounterR = afterResetCycleCounterR + 1;
-			if afterResetCycleCounterR == C_M_START_COUNT then
+		elsif sampleGeneratorEnR = '0' then
+		    afterResetCycleCounterR <= std_logic_vector(unsigned(afterResetCycleCounterR) + 1);
+			if to_integer(unsigned(afterResetCycleCounterR)) = C_M_START_COUNT then
 				sampleGeneratorEnR <= '1';
             end if;
 		end if;		
 		----------------------------------------------
 		
 		-- circuit for tValidR
-		if clk'event and M_AXIS_ACLK = '1' then
+		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
 		    tValidR <= '0';
 		  end if;
 		else
             if EN = '0' then
 			    tValidR <= '0';
-			elif sampleGeneratorEnR = '1' then
+			elsif sampleGeneratorEnR = '1' then
 				tValidR <= '1';
 			end if;
 		end if;		
 		----------------------------------------------
 
 		-- circuit for tlast 
-		if clk'event and M_AXIS_ACLK = '1' then
+		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
-		    packetCounter <= 0;
+		    packetCounter <= (others => '0');
 		  end if;
 		else
 		  if M_AXIS_TVALID = '1' AND M_AXIS_TREADY = '1' then
 
-			if packetCounter = (FRAMESIZE - 1) then
-			  packetCounter <= 0;
+			if to_integer(unsigned(packetCounter)) = (to_integer(unsigned(FRAMESIZE)) - 1) then
+			  packetCounter <= (others => '0');
 			else
-			  packetCounter <= packetCounter + 1;
+			  packetCounter <= std_logic_vector(unsigned(packetCounter) + 1);
 			end if;
 		  end if;
 		end if;		
@@ -116,11 +118,9 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	
 	
 	M_AXIS_TDATA <= counterR; -- connected, indicating the end of the frame/packet of data
-	M_AXIS_TSTRB <= ((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => '1';  -- (others => '1');  -- he set only C_M_AXIS_TDATA_WIDTH/8 bits to '1'
-	if packetCounter == FRAMESIZE - 1 then
-	  M_AXIS_TLAST <= '1';
-	else
-	  M_AXIS_TLAST <= '0';
-	end if
+	--M_AXIS_TSTRB <= ( ( (C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => '1');  -- (others => '1');  -- he set only C_M_AXIS_TDATA_WIDTH/8 bits to '1'
+	M_AXIS_TSTRB((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) <= (others => '1');
+
+	M_AXIS_TLAST <= '1' when to_integer(unsigned(packetCounter)) = (to_integer(unsigned(FRAMESIZE)) - 1) else M_AXIS_TLAST <= '0';
 	
 end implementation;
