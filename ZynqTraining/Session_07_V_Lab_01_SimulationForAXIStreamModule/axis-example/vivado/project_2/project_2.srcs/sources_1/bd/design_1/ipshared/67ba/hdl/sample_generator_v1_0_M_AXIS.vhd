@@ -26,7 +26,7 @@ entity sample_generator_v1_0_M_AXIS is
 		-- 
 		M_AXIS_ARESETN	: in std_logic;
 		-- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
-		M_AXIS_TVALID	: out std_logic;
+		M_AXIS_TVALID	: inout std_logic;
 		-- TDATA is the primary payload that is used to provide the data that is passing across the interface from the master.
 		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
 		-- TSTRB is the byte qualifier that indicates whether the content of the associated byte of TDATA is processed as a data byte or a position byte.
@@ -121,6 +121,6 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	--M_AXIS_TSTRB <= ( ( (C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => '1');  -- (others => '1');  -- he set only C_M_AXIS_TDATA_WIDTH/8 bits to '1'
 	M_AXIS_TSTRB((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) <= (others => '1');
 
-	M_AXIS_TLAST <= '1' when to_integer(unsigned(packetCounter)) = (to_integer(unsigned(FRAMESIZE)) - 1) else M_AXIS_TLAST <= '0';
+	M_AXIS_TLAST <= '1' when to_integer(unsigned(packetCounter)) = to_integer(unsigned(FRAMESIZE)) - 1 else '0';
 	
 end implementation;

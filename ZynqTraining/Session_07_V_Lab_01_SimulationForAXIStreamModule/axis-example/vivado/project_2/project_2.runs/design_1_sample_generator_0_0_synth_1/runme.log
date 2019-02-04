@@ -10,30 +10,49 @@
 
 source design_1_sample_generator_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/mycores/ip_repo'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/mycores/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.cache/ip 
+Current IP cache path is c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.cache/ip 
 Command: synth_design -top design_1_sample_generator_0_0 -part xc7z010clg400-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 54368 
+INFO: Helper process launched with PID 2904 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 397.426 ; gain = 101.133
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 396.402 ; gain = 96.004
 ---------------------------------------------------------------------------------
-ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_tvalid ; use 'buffer' or 'inout' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:66]
-ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_tvalid ; use 'buffer' or 'inout' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:106]
-ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_tlast ; use 'buffer' or 'inout' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:124]
-ERROR: [Synth 8-944] 0 definitions of operator "<=" match here [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:124]
-INFO: [Synth 8-2810] unit implementation ignored due to previous errors [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:41]
+WARNING: [Synth 8-2048] function clogb2 does not always return a value [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_S_AXIS.vhd:55]
+ERROR: [Synth 8-2778] type error near framesize ; expected type std_logic [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:119]
+ERROR: [Synth 8-2032] formal axi_en is not declared [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:120]
+ERROR: [Synth 8-2029] formal en has no actual or default value [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:113]
+INFO: [Synth 8-994] en is declared here [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:77]
+INFO: [Synth 8-994] m_axis_aclk is declared here [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:79]
+INFO: [Synth 8-994] m_axis_aresetn is declared here [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:80]
+INFO: [Synth 8-994] m_axis_tready is declared here [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:85]
+ERROR: [Synth 8-2715] syntax error near if [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:132]
+ERROR: [Synth 8-2778] type error near s_axis_tvalid ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:133]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:134]
+ERROR: [Synth 8-2778] type error near s_axis_tdata ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:134]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:135]
+ERROR: [Synth 8-2778] type error near s_axis_tstrb ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:135]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:136]
+ERROR: [Synth 8-2778] type error near s_axis_tlast ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:136]
+ERROR: [Synth 8-2778] type error near m_axis_tvalidw ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:138]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:139]
+ERROR: [Synth 8-2778] type error near m_axis_tdataw ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:139]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:140]
+ERROR: [Synth 8-2778] type error near m_axis_tstrbw ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:140]
+ERROR: [Synth 8-2715] syntax error near = [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:141]
+ERROR: [Synth 8-2778] type error near m_axis_tlastw ; expected type  void [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:141]
+ERROR: [Synth 8-2715] syntax error near if [c:/ZynqTemp/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:142]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 451.750 ; gain = 155.457
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 450.059 ; gain = 149.660
 ---------------------------------------------------------------------------------
 synthesize failed
 INFO: [Common 17-83] Releasing license: Synthesis
-6 Infos, 1 Warnings, 0 Critical Warnings and 5 Errors encountered.
+9 Infos, 2 Warnings, 0 Critical Warnings and 20 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
-INFO: [Common 17-206] Exiting Vivado at Fri Feb  1 17:51:41 2019...
+INFO: [Common 17-206] Exiting Vivado at Sat Feb  2 22:44:33 2019...
