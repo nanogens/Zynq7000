@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Mon Feb  4 16:07:59 2019
+--Date        : Wed Feb  6 19:36:14 2019
 --Host        : 63L-MT8825 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -34,21 +34,21 @@ end design_1_wrapper;
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
-    framesize : in STD_LOGIC_VECTOR ( 7 downto 0 );
     en : in STD_LOGIC;
     axi_en : in STD_LOGIC;
     m_axis_aclk : in STD_LOGIC;
     s_axis_aresetn : in STD_LOGIC;
+    S_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXIS_tstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S_AXIS_tlast : in STD_LOGIC;
+    S_AXIS_tvalid : in STD_LOGIC;
+    S_AXIS_tready : out STD_LOGIC;
     M_AXIS_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     M_AXIS_tstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
     M_AXIS_tlast : out STD_LOGIC;
     M_AXIS_tvalid : out STD_LOGIC;
     M_AXIS_tready : in STD_LOGIC;
-    S_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXIS_tstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_tlast : in STD_LOGIC;
-    S_AXIS_tvalid : in STD_LOGIC;
-    S_AXIS_tready : out STD_LOGIC
+    framesize : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1;
 begin

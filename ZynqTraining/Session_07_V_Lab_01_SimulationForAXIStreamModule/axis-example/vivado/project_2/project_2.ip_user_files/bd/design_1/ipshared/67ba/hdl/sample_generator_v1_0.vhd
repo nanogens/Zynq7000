@@ -19,7 +19,7 @@ entity sample_generator_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-        framesize : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0); -- MT
+        framesize : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
 		en : in std_logic; -- MT
 		axi_en : in std_logic; -- MT
 		-- User ports ends
@@ -27,7 +27,7 @@ entity sample_generator_v1_0 is
 
 
 		-- Ports of Axi Slave Bus Interface S_AXIS
-		s_axis_aclk	: in std_logic;
+		s_axis_aclk	: in std_logic; 
 		s_axis_aresetn	: in std_logic;
 		s_axis_tready	: out std_logic;
 		s_axis_tdata	: in std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
@@ -72,7 +72,7 @@ architecture arch_imp of sample_generator_v1_0 is
 		C_M_START_COUNT	: integer	:= 32
 		);
 		port (		
-	    FRAMESIZE : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
+	    FRAMESIZE : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
 
 		EN : in std_logic; 		
 		
@@ -116,7 +116,7 @@ sample_generator_v1_0_M_AXIS_inst : sample_generator_v1_0_M_AXIS
 		C_M_START_COUNT	=> C_M_AXIS_START_COUNT
 	)
 	port map (
-	    FRAMESIZE => framesize,
+	    FRAMESIZE => framesize, 
 		--AXI_EN => axi_en,
 		EN => en, 
 		

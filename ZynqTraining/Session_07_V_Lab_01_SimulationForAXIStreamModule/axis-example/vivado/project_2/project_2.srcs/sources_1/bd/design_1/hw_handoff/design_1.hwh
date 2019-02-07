@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  4 16:07:59 2019" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Feb  6 19:36:14 2019" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:microzed_7010:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="7" NAME="framesize" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_framesize">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="framesize"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="External_Ports_en">
       <CONNECTIONS>
         <CONNECTION INSTANCE="sample_generator_0" PORT="en"/>
@@ -29,6 +24,31 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="sample_generator_0" PORT="m_axis_aresetn"/>
         <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="S_AXIS_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="S_AXIS_tlast" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tlast">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tlast"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="S_AXIS_tready" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tready"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="sample_generator_0_m_axis_tdata">
@@ -56,29 +76,9 @@
         <CONNECTION INSTANCE="sample_generator_0" PORT="m_axis_tready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tdata">
+    <PORT DIR="I" LEFT="7" NAME="framesize" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_framesize">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="S_AXIS_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="S_AXIS_tlast" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tlast">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tlast"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="S_AXIS_tready" SIGIS="undef" SIGNAME="sample_generator_0_s_axis_tready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_tready"/>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="framesize"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>

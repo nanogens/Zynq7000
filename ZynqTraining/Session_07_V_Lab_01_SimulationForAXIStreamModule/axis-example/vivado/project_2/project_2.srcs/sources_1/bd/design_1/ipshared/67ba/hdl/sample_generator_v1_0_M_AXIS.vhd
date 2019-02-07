@@ -16,7 +16,7 @@ entity sample_generator_v1_0_M_AXIS is
 	);
 	port (
 		-- Users to add ports here
-		FRAMESIZE	: in std_logic_vector(7 downto 0);
+		FRAMESIZE	: in std_logic_vector((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
 		EN 				: in std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
@@ -26,7 +26,7 @@ entity sample_generator_v1_0_M_AXIS is
 		-- 
 		M_AXIS_ARESETN	: in std_logic;
 		-- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
-		M_AXIS_TVALID	: inout std_logic;
+		M_AXIS_TVALID	: out std_logic;
 		-- TDATA is the primary payload that is used to provide the data that is passing across the interface from the master.
 		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
 		-- TSTRB is the byte qualifier that indicates whether the content of the associated byte of TDATA is processed as a data byte or a position byte.
@@ -54,6 +54,8 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	signal packetCounter : std_logic_vector(7 downto 0);
 	
 
+	
+
 	begin
     FUNCTIONS : process(M_AXIS_ACLK) 	
 	begin
@@ -61,9 +63,7 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
 			counterR <= (others => '0');
-		  end if;
-		else
-		  if M_AXIS_TVALID = '1' AND M_AXIS_TREADY = '1' then
+		  elsif tValidR = '1' AND M_AXIS_TREADY = '1' then
 		    counterR <= std_logic_vector(unsigned(counterR) + 1);
 		  end if;
 		end if;
@@ -71,29 +71,27 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 		
 		-- circuit for initializing module after X number of clock cycles
 		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
-		  if M_AXIS_ARESETN = '0' then
-		    sampleGeneratorEnR <= '0';
-			afterResetCycleCounterR <= (others => '0');
-		  end if;
-		elsif sampleGeneratorEnR = '0' then
-		    afterResetCycleCounterR <= std_logic_vector(unsigned(afterResetCycleCounterR) + 1);
-			if to_integer(unsigned(afterResetCycleCounterR)) = C_M_START_COUNT then
-				sampleGeneratorEnR <= '1';
-            end if;
+		    if M_AXIS_ARESETN = '0' then
+		        sampleGeneratorEnR <= '0';
+			    afterResetCycleCounterR <= (others => '0');
+		    elsif sampleGeneratorEnR = '0' then
+		      afterResetCycleCounterR <= std_logic_vector(unsigned(afterResetCycleCounterR) + 1);
+			  if to_integer(unsigned(afterResetCycleCounterR)) = C_M_START_COUNT then
+				  sampleGeneratorEnR <= '1';
+              end if;
+		    end if;
 		end if;		
 		----------------------------------------------
 		
 		-- circuit for tValidR
 		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
-		    tValidR <= '0';
+		      tValidR <= '0';
+		  elsif EN = '0' then
+			  tValidR <= '0';
+		  elsif sampleGeneratorEnR = '1' then
+			  tValidR <= '1';
 		  end if;
-		else
-            if EN = '0' then
-			    tValidR <= '0';
-			elsif sampleGeneratorEnR = '1' then
-				tValidR <= '1';
-			end if;
 		end if;		
 		----------------------------------------------
 
@@ -101,10 +99,7 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 		if M_AXIS_ACLK'event and M_AXIS_ACLK = '1' then
 		  if M_AXIS_ARESETN = '0' then
 		    packetCounter <= (others => '0');
-		  end if;
-		else
-		  if M_AXIS_TVALID = '1' AND M_AXIS_TREADY = '1' then
-
+		  elsif tValidR = '1' AND M_AXIS_TREADY = '1' then
 			if to_integer(unsigned(packetCounter)) = (to_integer(unsigned(FRAMESIZE)) - 1) then
 			  packetCounter <= (others => '0');
 			else
@@ -122,5 +117,8 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	M_AXIS_TSTRB((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) <= (others => '1');
 
 	M_AXIS_TLAST <= '1' when to_integer(unsigned(packetCounter)) = to_integer(unsigned(FRAMESIZE)) - 1 else '0';
+	
+	
+
 	
 end implementation;

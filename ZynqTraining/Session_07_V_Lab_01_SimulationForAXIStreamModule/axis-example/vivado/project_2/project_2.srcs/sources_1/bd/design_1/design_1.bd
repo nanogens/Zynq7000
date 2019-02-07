@@ -121,11 +121,6 @@
       }
     },
     "ports": {
-      "framesize": {
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
       "en": {
         "direction": "I"
       },
@@ -174,6 +169,11 @@
             "value_src": "default"
           }
         }
+      },
+      "framesize": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
       }
     },
     "components": {
@@ -197,12 +197,6 @@
       }
     },
     "nets": {
-      "framesize_1": {
-        "ports": [
-          "framesize",
-          "sample_generator_0/framesize"
-        ]
-      },
       "en_1": {
         "ports": [
           "en",
@@ -227,6 +221,12 @@
           "s_axis_aresetn",
           "sample_generator_0/m_axis_aresetn",
           "sample_generator_0/s_axis_aresetn"
+        ]
+      },
+      "framesize_1": {
+        "ports": [
+          "framesize",
+          "sample_generator_0/framesize"
         ]
       }
     }
