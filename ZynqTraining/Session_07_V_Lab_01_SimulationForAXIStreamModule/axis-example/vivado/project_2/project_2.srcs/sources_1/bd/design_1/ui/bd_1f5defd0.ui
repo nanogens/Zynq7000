@@ -10,13 +10,13 @@ preplace port m_axis_aclk -pg 1 -y 180 -defaultsOSRD
 preplace port M_AXIS -pg 1 -y 130 -defaultsOSRD
 preplace portBus framesize -pg 1 -y 90 -defaultsOSRD
 preplace inst sample_generator_0 -pg 1 -lvl 1 -y 180 -defaultsOSRD
-preplace netloc framesize_1 1 0 1 -60J
-preplace netloc en_1 1 0 1 -70J
-preplace netloc sample_generator_0_M_AXIS 1 1 1 N
-preplace netloc axi_en_1 1 0 1 -80J
+preplace netloc framesize_1 1 0 1 -80J
+preplace netloc en_1 1 0 1 -90J
+preplace netloc sample_generator_0_M_AXIS 1 1 1 230
+preplace netloc axi_en_1 1 0 1 -100J
 preplace netloc m_axis_aclk_1 1 0 1 -90
-preplace netloc S_AXIS_1 1 0 1 NJ
-preplace netloc s_axis_aresetn_1 1 0 1 -100
+preplace netloc S_AXIS_1 1 0 1 -70J
+preplace netloc s_axis_aresetn_1 1 0 1 -70
 levelinfo -pg 1 -120 110 300 -top 0 -bot 360
 "
 }

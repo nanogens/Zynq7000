@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Feb  6 19:36:43 2019
-// Host        : 63L-MT8825 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/design_1_sample_generator_0_0_sim_netlist.v
+// Date        : Sat Feb  9 20:55:38 2019
+// Host        : LAPTOP-QIAK00UP running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_sample_generator_0_0 -prefix
+//               design_1_sample_generator_0_0_ design_1_sample_generator_0_0_sim_netlist.v
 // Design      : design_1_sample_generator_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -50,6 +50,7 @@ module design_1_sample_generator_0_0
   (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXIS_CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXIS_CLK, ASSOCIATED_BUSIF S_AXIS, ASSOCIATED_RESET s_axis_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_m_axis_aclk, INSERT_VIP 0" *) input s_axis_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S_AXIS_RST RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXIS_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axis_aresetn;
 
+  wire \<const1> ;
   wire axi_en;
   wire en;
   wire [7:0]framesize;
@@ -58,13 +59,15 @@ module design_1_sample_generator_0_0
   wire [31:0]m_axis_tdata;
   wire m_axis_tlast;
   wire m_axis_tready;
-  wire [3:0]m_axis_tstrb;
   wire m_axis_tvalid;
   wire [31:0]s_axis_tdata;
   wire s_axis_tlast;
-  wire [3:0]s_axis_tstrb;
   wire s_axis_tvalid;
 
+  assign m_axis_tstrb[3] = \<const1> ;
+  assign m_axis_tstrb[2] = \<const1> ;
+  assign m_axis_tstrb[1] = \<const1> ;
+  assign m_axis_tstrb[0] = \<const1> ;
   assign s_axis_tready = m_axis_tready;
   design_1_sample_generator_0_0_sample_generator_v1_0 U0
        (.axi_en(axi_en),
@@ -77,30 +80,8 @@ module design_1_sample_generator_0_0
         .m_axis_tready(m_axis_tready),
         .s_axis_tdata(s_axis_tdata),
         .s_axis_tlast(s_axis_tlast));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \m_axis_tstrb[0]_INST_0 
-       (.I0(s_axis_tstrb[0]),
-        .I1(axi_en),
-        .O(m_axis_tstrb[0]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \m_axis_tstrb[1]_INST_0 
-       (.I0(s_axis_tstrb[1]),
-        .I1(axi_en),
-        .O(m_axis_tstrb[1]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \m_axis_tstrb[2]_INST_0 
-       (.I0(s_axis_tstrb[2]),
-        .I1(axi_en),
-        .O(m_axis_tstrb[2]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \m_axis_tstrb[3]_INST_0 
-       (.I0(s_axis_tstrb[3]),
-        .I1(axi_en),
-        .O(m_axis_tstrb[3]));
+  VCC VCC
+       (.P(\<const1> ));
   LUT2 #(
     .INIT(4'h8)) 
     m_axis_tvalid_INST_0
@@ -109,27 +90,26 @@ module design_1_sample_generator_0_0
         .O(m_axis_tvalid));
 endmodule
 
-(* ORIG_REF_NAME = "sample_generator_v1_0" *) 
 module design_1_sample_generator_0_0_sample_generator_v1_0
-   (m_axis_tlast,
-    m_axis_tdata,
+   (m_axis_tdata,
+    m_axis_tlast,
     m_axis_aclk,
     m_axis_tready,
-    s_axis_tlast,
-    axi_en,
-    m_axis_aresetn,
     framesize,
+    m_axis_aresetn,
     en,
+    axi_en,
+    s_axis_tlast,
     s_axis_tdata);
-  output m_axis_tlast;
   output [31:0]m_axis_tdata;
+  output m_axis_tlast;
   input m_axis_aclk;
   input m_axis_tready;
-  input s_axis_tlast;
-  input axi_en;
-  input m_axis_aresetn;
   input [7:0]framesize;
+  input m_axis_aresetn;
   input en;
+  input axi_en;
+  input s_axis_tlast;
   input [31:0]s_axis_tdata;
 
   wire axi_en;
@@ -156,100 +136,97 @@ module design_1_sample_generator_0_0_sample_generator_v1_0
         .s_axis_tlast(s_axis_tlast));
 endmodule
 
-(* ORIG_REF_NAME = "sample_generator_v1_0_M_AXIS" *) 
 module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
-   (m_axis_tlast,
-    m_axis_tdata,
+   (m_axis_tdata,
+    m_axis_tlast,
     m_axis_aclk,
     m_axis_tready,
-    s_axis_tlast,
-    axi_en,
-    m_axis_aresetn,
     framesize,
+    m_axis_aresetn,
     en,
+    axi_en,
+    s_axis_tlast,
     s_axis_tdata);
-  output m_axis_tlast;
   output [31:0]m_axis_tdata;
+  output m_axis_tlast;
   input m_axis_aclk;
   input m_axis_tready;
-  input s_axis_tlast;
-  input axi_en;
-  input m_axis_aresetn;
   input [7:0]framesize;
+  input m_axis_aresetn;
   input en;
+  input axi_en;
+  input s_axis_tlast;
   input [31:0]s_axis_tdata;
 
-  wire M_AXIS_TLAST;
-  wire \afterResetCycleCounterR[7]_i_4_n_0 ;
+  wire \afterResetCycleCounterR[7]_i_3_n_0 ;
   wire [7:0]afterResetCycleCounterR_reg__0;
   wire axi_en;
-  wire clear;
   wire counterR0;
-  wire \counterR[0]_i_2_n_0 ;
-  wire [31:0]counterR_reg;
-  wire \counterR_reg[0]_i_1_n_0 ;
-  wire \counterR_reg[0]_i_1_n_1 ;
-  wire \counterR_reg[0]_i_1_n_2 ;
-  wire \counterR_reg[0]_i_1_n_3 ;
-  wire \counterR_reg[0]_i_1_n_4 ;
-  wire \counterR_reg[0]_i_1_n_5 ;
-  wire \counterR_reg[0]_i_1_n_6 ;
-  wire \counterR_reg[0]_i_1_n_7 ;
-  wire \counterR_reg[12]_i_1_n_0 ;
-  wire \counterR_reg[12]_i_1_n_1 ;
-  wire \counterR_reg[12]_i_1_n_2 ;
-  wire \counterR_reg[12]_i_1_n_3 ;
-  wire \counterR_reg[12]_i_1_n_4 ;
-  wire \counterR_reg[12]_i_1_n_5 ;
-  wire \counterR_reg[12]_i_1_n_6 ;
-  wire \counterR_reg[12]_i_1_n_7 ;
-  wire \counterR_reg[16]_i_1_n_0 ;
-  wire \counterR_reg[16]_i_1_n_1 ;
-  wire \counterR_reg[16]_i_1_n_2 ;
-  wire \counterR_reg[16]_i_1_n_3 ;
-  wire \counterR_reg[16]_i_1_n_4 ;
-  wire \counterR_reg[16]_i_1_n_5 ;
-  wire \counterR_reg[16]_i_1_n_6 ;
-  wire \counterR_reg[16]_i_1_n_7 ;
-  wire \counterR_reg[20]_i_1_n_0 ;
-  wire \counterR_reg[20]_i_1_n_1 ;
-  wire \counterR_reg[20]_i_1_n_2 ;
-  wire \counterR_reg[20]_i_1_n_3 ;
-  wire \counterR_reg[20]_i_1_n_4 ;
-  wire \counterR_reg[20]_i_1_n_5 ;
-  wire \counterR_reg[20]_i_1_n_6 ;
-  wire \counterR_reg[20]_i_1_n_7 ;
-  wire \counterR_reg[24]_i_1_n_0 ;
-  wire \counterR_reg[24]_i_1_n_1 ;
-  wire \counterR_reg[24]_i_1_n_2 ;
-  wire \counterR_reg[24]_i_1_n_3 ;
-  wire \counterR_reg[24]_i_1_n_4 ;
-  wire \counterR_reg[24]_i_1_n_5 ;
-  wire \counterR_reg[24]_i_1_n_6 ;
-  wire \counterR_reg[24]_i_1_n_7 ;
-  wire \counterR_reg[28]_i_1_n_1 ;
-  wire \counterR_reg[28]_i_1_n_2 ;
-  wire \counterR_reg[28]_i_1_n_3 ;
-  wire \counterR_reg[28]_i_1_n_4 ;
-  wire \counterR_reg[28]_i_1_n_5 ;
-  wire \counterR_reg[28]_i_1_n_6 ;
-  wire \counterR_reg[28]_i_1_n_7 ;
-  wire \counterR_reg[4]_i_1_n_0 ;
-  wire \counterR_reg[4]_i_1_n_1 ;
-  wire \counterR_reg[4]_i_1_n_2 ;
-  wire \counterR_reg[4]_i_1_n_3 ;
-  wire \counterR_reg[4]_i_1_n_4 ;
-  wire \counterR_reg[4]_i_1_n_5 ;
-  wire \counterR_reg[4]_i_1_n_6 ;
-  wire \counterR_reg[4]_i_1_n_7 ;
-  wire \counterR_reg[8]_i_1_n_0 ;
-  wire \counterR_reg[8]_i_1_n_1 ;
-  wire \counterR_reg[8]_i_1_n_2 ;
-  wire \counterR_reg[8]_i_1_n_3 ;
-  wire \counterR_reg[8]_i_1_n_4 ;
-  wire \counterR_reg[8]_i_1_n_5 ;
-  wire \counterR_reg[8]_i_1_n_6 ;
-  wire \counterR_reg[8]_i_1_n_7 ;
+  wire \counterR[31]_i_1_n_0 ;
+  wire \counterR[3]_i_2_n_0 ;
+  wire \counterR_reg[11]_i_1_n_0 ;
+  wire \counterR_reg[11]_i_1_n_1 ;
+  wire \counterR_reg[11]_i_1_n_2 ;
+  wire \counterR_reg[11]_i_1_n_3 ;
+  wire \counterR_reg[11]_i_1_n_4 ;
+  wire \counterR_reg[11]_i_1_n_5 ;
+  wire \counterR_reg[11]_i_1_n_6 ;
+  wire \counterR_reg[11]_i_1_n_7 ;
+  wire \counterR_reg[15]_i_1_n_0 ;
+  wire \counterR_reg[15]_i_1_n_1 ;
+  wire \counterR_reg[15]_i_1_n_2 ;
+  wire \counterR_reg[15]_i_1_n_3 ;
+  wire \counterR_reg[15]_i_1_n_4 ;
+  wire \counterR_reg[15]_i_1_n_5 ;
+  wire \counterR_reg[15]_i_1_n_6 ;
+  wire \counterR_reg[15]_i_1_n_7 ;
+  wire \counterR_reg[19]_i_1_n_0 ;
+  wire \counterR_reg[19]_i_1_n_1 ;
+  wire \counterR_reg[19]_i_1_n_2 ;
+  wire \counterR_reg[19]_i_1_n_3 ;
+  wire \counterR_reg[19]_i_1_n_4 ;
+  wire \counterR_reg[19]_i_1_n_5 ;
+  wire \counterR_reg[19]_i_1_n_6 ;
+  wire \counterR_reg[19]_i_1_n_7 ;
+  wire \counterR_reg[23]_i_1_n_0 ;
+  wire \counterR_reg[23]_i_1_n_1 ;
+  wire \counterR_reg[23]_i_1_n_2 ;
+  wire \counterR_reg[23]_i_1_n_3 ;
+  wire \counterR_reg[23]_i_1_n_4 ;
+  wire \counterR_reg[23]_i_1_n_5 ;
+  wire \counterR_reg[23]_i_1_n_6 ;
+  wire \counterR_reg[23]_i_1_n_7 ;
+  wire \counterR_reg[27]_i_1_n_0 ;
+  wire \counterR_reg[27]_i_1_n_1 ;
+  wire \counterR_reg[27]_i_1_n_2 ;
+  wire \counterR_reg[27]_i_1_n_3 ;
+  wire \counterR_reg[27]_i_1_n_4 ;
+  wire \counterR_reg[27]_i_1_n_5 ;
+  wire \counterR_reg[27]_i_1_n_6 ;
+  wire \counterR_reg[27]_i_1_n_7 ;
+  wire \counterR_reg[31]_i_3_n_1 ;
+  wire \counterR_reg[31]_i_3_n_2 ;
+  wire \counterR_reg[31]_i_3_n_3 ;
+  wire \counterR_reg[31]_i_3_n_4 ;
+  wire \counterR_reg[31]_i_3_n_5 ;
+  wire \counterR_reg[31]_i_3_n_6 ;
+  wire \counterR_reg[31]_i_3_n_7 ;
+  wire \counterR_reg[3]_i_1_n_0 ;
+  wire \counterR_reg[3]_i_1_n_1 ;
+  wire \counterR_reg[3]_i_1_n_2 ;
+  wire \counterR_reg[3]_i_1_n_3 ;
+  wire \counterR_reg[3]_i_1_n_4 ;
+  wire \counterR_reg[3]_i_1_n_5 ;
+  wire \counterR_reg[3]_i_1_n_6 ;
+  wire \counterR_reg[3]_i_1_n_7 ;
+  wire \counterR_reg[7]_i_1_n_0 ;
+  wire \counterR_reg[7]_i_1_n_1 ;
+  wire \counterR_reg[7]_i_1_n_2 ;
+  wire \counterR_reg[7]_i_1_n_3 ;
+  wire \counterR_reg[7]_i_1_n_4 ;
+  wire \counterR_reg[7]_i_1_n_5 ;
+  wire \counterR_reg[7]_i_1_n_6 ;
+  wire \counterR_reg[7]_i_1_n_7 ;
   wire en;
   wire [7:0]framesize;
   wire m_axis_aclk;
@@ -267,7 +244,7 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
   wire packetCounter0_carry_n_2;
   wire packetCounter0_carry_n_3;
   wire \packetCounter[7]_i_1_n_0 ;
-  wire \packetCounter[7]_i_4_n_0 ;
+  wire \packetCounter[7]_i_3_n_0 ;
   wire [7:0]packetCounter_reg__0;
   wire [7:0]plusOp;
   wire [7:0]plusOp__0;
@@ -279,24 +256,24 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
   wire sampleGeneratorEnR_i_3_n_0;
   wire tValidR;
   wire tValidR_i_1_n_0;
-  wire [3:3]\NLW_counterR_reg[28]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_counterR_reg[31]_i_3_CO_UNCONNECTED ;
   wire [3:3]NLW_packetCounter0_carry_CO_UNCONNECTED;
   wire [3:0]NLW_packetCounter0_carry_O_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \afterResetCycleCounterR[0]_i_1 
        (.I0(afterResetCycleCounterR_reg__0[0]),
         .O(plusOp[0]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \afterResetCycleCounterR[1]_i_1 
        (.I0(afterResetCycleCounterR_reg__0[0]),
         .I1(afterResetCycleCounterR_reg__0[1]),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \afterResetCycleCounterR[2]_i_1 
@@ -336,604 +313,547 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
   LUT2 #(
     .INIT(4'h6)) 
     \afterResetCycleCounterR[6]_i_1 
-       (.I0(\afterResetCycleCounterR[7]_i_4_n_0 ),
+       (.I0(\afterResetCycleCounterR[7]_i_3_n_0 ),
         .I1(afterResetCycleCounterR_reg__0[6]),
         .O(plusOp[6]));
   LUT1 #(
     .INIT(2'h1)) 
     \afterResetCycleCounterR[7]_i_1 
-       (.I0(m_axis_aresetn),
-        .O(clear));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \afterResetCycleCounterR[7]_i_2 
        (.I0(sampleGeneratorEnR),
         .O(p_0_in));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h78)) 
-    \afterResetCycleCounterR[7]_i_3 
-       (.I0(\afterResetCycleCounterR[7]_i_4_n_0 ),
+    \afterResetCycleCounterR[7]_i_2 
+       (.I0(\afterResetCycleCounterR[7]_i_3_n_0 ),
         .I1(afterResetCycleCounterR_reg__0[6]),
         .I2(afterResetCycleCounterR_reg__0[7]),
         .O(plusOp[7]));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
-    \afterResetCycleCounterR[7]_i_4 
+    \afterResetCycleCounterR[7]_i_3 
        (.I0(afterResetCycleCounterR_reg__0[5]),
         .I1(afterResetCycleCounterR_reg__0[3]),
         .I2(afterResetCycleCounterR_reg__0[1]),
         .I3(afterResetCycleCounterR_reg__0[0]),
         .I4(afterResetCycleCounterR_reg__0[2]),
         .I5(afterResetCycleCounterR_reg__0[4]),
-        .O(\afterResetCycleCounterR[7]_i_4_n_0 ));
+        .O(\afterResetCycleCounterR[7]_i_3_n_0 ));
   FDRE \afterResetCycleCounterR_reg[0] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[0]),
         .Q(afterResetCycleCounterR_reg__0[0]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[1] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[1]),
         .Q(afterResetCycleCounterR_reg__0[1]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[2] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[2]),
         .Q(afterResetCycleCounterR_reg__0[2]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[3] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[3]),
         .Q(afterResetCycleCounterR_reg__0[3]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[4] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[4]),
         .Q(afterResetCycleCounterR_reg__0[4]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[5] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[5]),
         .Q(afterResetCycleCounterR_reg__0[5]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[6] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[6]),
         .Q(afterResetCycleCounterR_reg__0[6]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \afterResetCycleCounterR_reg[7] 
        (.C(m_axis_aclk),
         .CE(p_0_in),
         .D(plusOp[7]),
         .Q(afterResetCycleCounterR_reg__0[7]),
-        .R(clear));
+        .R(\counterR[31]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \counterR[0]_i_2 
-       (.I0(counterR_reg[0]),
-        .O(\counterR[0]_i_2_n_0 ));
+    \counterR[31]_i_1 
+       (.I0(m_axis_aresetn),
+        .O(\counterR[31]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \counterR[31]_i_2 
+       (.I0(tValidR),
+        .I1(m_axis_tready),
+        .O(counterR0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \counterR[3]_i_2 
+       (.I0(m_axis_tdata[0]),
+        .O(\counterR[3]_i_2_n_0 ));
   FDRE \counterR_reg[0] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[0]_i_1_n_7 ),
-        .Q(counterR_reg[0]),
-        .R(clear));
-  CARRY4 \counterR_reg[0]_i_1 
-       (.CI(1'b0),
-        .CO({\counterR_reg[0]_i_1_n_0 ,\counterR_reg[0]_i_1_n_1 ,\counterR_reg[0]_i_1_n_2 ,\counterR_reg[0]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\counterR_reg[0]_i_1_n_4 ,\counterR_reg[0]_i_1_n_5 ,\counterR_reg[0]_i_1_n_6 ,\counterR_reg[0]_i_1_n_7 }),
-        .S({counterR_reg[3:1],\counterR[0]_i_2_n_0 }));
+        .D(\counterR_reg[3]_i_1_n_7 ),
+        .Q(m_axis_tdata[0]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[10] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[8]_i_1_n_5 ),
-        .Q(counterR_reg[10]),
-        .R(clear));
+        .D(\counterR_reg[11]_i_1_n_5 ),
+        .Q(m_axis_tdata[10]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[11] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[8]_i_1_n_4 ),
-        .Q(counterR_reg[11]),
-        .R(clear));
+        .D(\counterR_reg[11]_i_1_n_4 ),
+        .Q(m_axis_tdata[11]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[11]_i_1 
+       (.CI(\counterR_reg[7]_i_1_n_0 ),
+        .CO({\counterR_reg[11]_i_1_n_0 ,\counterR_reg[11]_i_1_n_1 ,\counterR_reg[11]_i_1_n_2 ,\counterR_reg[11]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[11]_i_1_n_4 ,\counterR_reg[11]_i_1_n_5 ,\counterR_reg[11]_i_1_n_6 ,\counterR_reg[11]_i_1_n_7 }),
+        .S(m_axis_tdata[11:8]));
   FDRE \counterR_reg[12] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[12]_i_1_n_7 ),
-        .Q(counterR_reg[12]),
-        .R(clear));
-  CARRY4 \counterR_reg[12]_i_1 
-       (.CI(\counterR_reg[8]_i_1_n_0 ),
-        .CO({\counterR_reg[12]_i_1_n_0 ,\counterR_reg[12]_i_1_n_1 ,\counterR_reg[12]_i_1_n_2 ,\counterR_reg[12]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[12]_i_1_n_4 ,\counterR_reg[12]_i_1_n_5 ,\counterR_reg[12]_i_1_n_6 ,\counterR_reg[12]_i_1_n_7 }),
-        .S(counterR_reg[15:12]));
+        .D(\counterR_reg[15]_i_1_n_7 ),
+        .Q(m_axis_tdata[12]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[13] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[12]_i_1_n_6 ),
-        .Q(counterR_reg[13]),
-        .R(clear));
+        .D(\counterR_reg[15]_i_1_n_6 ),
+        .Q(m_axis_tdata[13]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[14] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[12]_i_1_n_5 ),
-        .Q(counterR_reg[14]),
-        .R(clear));
+        .D(\counterR_reg[15]_i_1_n_5 ),
+        .Q(m_axis_tdata[14]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[15] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[12]_i_1_n_4 ),
-        .Q(counterR_reg[15]),
-        .R(clear));
+        .D(\counterR_reg[15]_i_1_n_4 ),
+        .Q(m_axis_tdata[15]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[15]_i_1 
+       (.CI(\counterR_reg[11]_i_1_n_0 ),
+        .CO({\counterR_reg[15]_i_1_n_0 ,\counterR_reg[15]_i_1_n_1 ,\counterR_reg[15]_i_1_n_2 ,\counterR_reg[15]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[15]_i_1_n_4 ,\counterR_reg[15]_i_1_n_5 ,\counterR_reg[15]_i_1_n_6 ,\counterR_reg[15]_i_1_n_7 }),
+        .S(m_axis_tdata[15:12]));
   FDRE \counterR_reg[16] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[16]_i_1_n_7 ),
-        .Q(counterR_reg[16]),
-        .R(clear));
-  CARRY4 \counterR_reg[16]_i_1 
-       (.CI(\counterR_reg[12]_i_1_n_0 ),
-        .CO({\counterR_reg[16]_i_1_n_0 ,\counterR_reg[16]_i_1_n_1 ,\counterR_reg[16]_i_1_n_2 ,\counterR_reg[16]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[16]_i_1_n_4 ,\counterR_reg[16]_i_1_n_5 ,\counterR_reg[16]_i_1_n_6 ,\counterR_reg[16]_i_1_n_7 }),
-        .S(counterR_reg[19:16]));
+        .D(\counterR_reg[19]_i_1_n_7 ),
+        .Q(m_axis_tdata[16]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[17] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[16]_i_1_n_6 ),
-        .Q(counterR_reg[17]),
-        .R(clear));
+        .D(\counterR_reg[19]_i_1_n_6 ),
+        .Q(m_axis_tdata[17]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[18] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[16]_i_1_n_5 ),
-        .Q(counterR_reg[18]),
-        .R(clear));
+        .D(\counterR_reg[19]_i_1_n_5 ),
+        .Q(m_axis_tdata[18]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[19] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[16]_i_1_n_4 ),
-        .Q(counterR_reg[19]),
-        .R(clear));
+        .D(\counterR_reg[19]_i_1_n_4 ),
+        .Q(m_axis_tdata[19]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[19]_i_1 
+       (.CI(\counterR_reg[15]_i_1_n_0 ),
+        .CO({\counterR_reg[19]_i_1_n_0 ,\counterR_reg[19]_i_1_n_1 ,\counterR_reg[19]_i_1_n_2 ,\counterR_reg[19]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[19]_i_1_n_4 ,\counterR_reg[19]_i_1_n_5 ,\counterR_reg[19]_i_1_n_6 ,\counterR_reg[19]_i_1_n_7 }),
+        .S(m_axis_tdata[19:16]));
   FDRE \counterR_reg[1] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[0]_i_1_n_6 ),
-        .Q(counterR_reg[1]),
-        .R(clear));
+        .D(\counterR_reg[3]_i_1_n_6 ),
+        .Q(m_axis_tdata[1]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[20] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[20]_i_1_n_7 ),
-        .Q(counterR_reg[20]),
-        .R(clear));
-  CARRY4 \counterR_reg[20]_i_1 
-       (.CI(\counterR_reg[16]_i_1_n_0 ),
-        .CO({\counterR_reg[20]_i_1_n_0 ,\counterR_reg[20]_i_1_n_1 ,\counterR_reg[20]_i_1_n_2 ,\counterR_reg[20]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[20]_i_1_n_4 ,\counterR_reg[20]_i_1_n_5 ,\counterR_reg[20]_i_1_n_6 ,\counterR_reg[20]_i_1_n_7 }),
-        .S(counterR_reg[23:20]));
+        .D(\counterR_reg[23]_i_1_n_7 ),
+        .Q(m_axis_tdata[20]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[21] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[20]_i_1_n_6 ),
-        .Q(counterR_reg[21]),
-        .R(clear));
+        .D(\counterR_reg[23]_i_1_n_6 ),
+        .Q(m_axis_tdata[21]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[22] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[20]_i_1_n_5 ),
-        .Q(counterR_reg[22]),
-        .R(clear));
+        .D(\counterR_reg[23]_i_1_n_5 ),
+        .Q(m_axis_tdata[22]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[23] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[20]_i_1_n_4 ),
-        .Q(counterR_reg[23]),
-        .R(clear));
+        .D(\counterR_reg[23]_i_1_n_4 ),
+        .Q(m_axis_tdata[23]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[23]_i_1 
+       (.CI(\counterR_reg[19]_i_1_n_0 ),
+        .CO({\counterR_reg[23]_i_1_n_0 ,\counterR_reg[23]_i_1_n_1 ,\counterR_reg[23]_i_1_n_2 ,\counterR_reg[23]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[23]_i_1_n_4 ,\counterR_reg[23]_i_1_n_5 ,\counterR_reg[23]_i_1_n_6 ,\counterR_reg[23]_i_1_n_7 }),
+        .S(m_axis_tdata[23:20]));
   FDRE \counterR_reg[24] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[24]_i_1_n_7 ),
-        .Q(counterR_reg[24]),
-        .R(clear));
-  CARRY4 \counterR_reg[24]_i_1 
-       (.CI(\counterR_reg[20]_i_1_n_0 ),
-        .CO({\counterR_reg[24]_i_1_n_0 ,\counterR_reg[24]_i_1_n_1 ,\counterR_reg[24]_i_1_n_2 ,\counterR_reg[24]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[24]_i_1_n_4 ,\counterR_reg[24]_i_1_n_5 ,\counterR_reg[24]_i_1_n_6 ,\counterR_reg[24]_i_1_n_7 }),
-        .S(counterR_reg[27:24]));
+        .D(\counterR_reg[27]_i_1_n_7 ),
+        .Q(m_axis_tdata[24]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[25] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[24]_i_1_n_6 ),
-        .Q(counterR_reg[25]),
-        .R(clear));
+        .D(\counterR_reg[27]_i_1_n_6 ),
+        .Q(m_axis_tdata[25]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[26] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[24]_i_1_n_5 ),
-        .Q(counterR_reg[26]),
-        .R(clear));
+        .D(\counterR_reg[27]_i_1_n_5 ),
+        .Q(m_axis_tdata[26]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[27] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[24]_i_1_n_4 ),
-        .Q(counterR_reg[27]),
-        .R(clear));
+        .D(\counterR_reg[27]_i_1_n_4 ),
+        .Q(m_axis_tdata[27]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[27]_i_1 
+       (.CI(\counterR_reg[23]_i_1_n_0 ),
+        .CO({\counterR_reg[27]_i_1_n_0 ,\counterR_reg[27]_i_1_n_1 ,\counterR_reg[27]_i_1_n_2 ,\counterR_reg[27]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[27]_i_1_n_4 ,\counterR_reg[27]_i_1_n_5 ,\counterR_reg[27]_i_1_n_6 ,\counterR_reg[27]_i_1_n_7 }),
+        .S(m_axis_tdata[27:24]));
   FDRE \counterR_reg[28] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[28]_i_1_n_7 ),
-        .Q(counterR_reg[28]),
-        .R(clear));
-  CARRY4 \counterR_reg[28]_i_1 
-       (.CI(\counterR_reg[24]_i_1_n_0 ),
-        .CO({\NLW_counterR_reg[28]_i_1_CO_UNCONNECTED [3],\counterR_reg[28]_i_1_n_1 ,\counterR_reg[28]_i_1_n_2 ,\counterR_reg[28]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[28]_i_1_n_4 ,\counterR_reg[28]_i_1_n_5 ,\counterR_reg[28]_i_1_n_6 ,\counterR_reg[28]_i_1_n_7 }),
-        .S(counterR_reg[31:28]));
+        .D(\counterR_reg[31]_i_3_n_7 ),
+        .Q(m_axis_tdata[28]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[29] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[28]_i_1_n_6 ),
-        .Q(counterR_reg[29]),
-        .R(clear));
+        .D(\counterR_reg[31]_i_3_n_6 ),
+        .Q(m_axis_tdata[29]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[2] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[0]_i_1_n_5 ),
-        .Q(counterR_reg[2]),
-        .R(clear));
+        .D(\counterR_reg[3]_i_1_n_5 ),
+        .Q(m_axis_tdata[2]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[30] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[28]_i_1_n_5 ),
-        .Q(counterR_reg[30]),
-        .R(clear));
+        .D(\counterR_reg[31]_i_3_n_5 ),
+        .Q(m_axis_tdata[30]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[31] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[28]_i_1_n_4 ),
-        .Q(counterR_reg[31]),
-        .R(clear));
+        .D(\counterR_reg[31]_i_3_n_4 ),
+        .Q(m_axis_tdata[31]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[31]_i_3 
+       (.CI(\counterR_reg[27]_i_1_n_0 ),
+        .CO({\NLW_counterR_reg[31]_i_3_CO_UNCONNECTED [3],\counterR_reg[31]_i_3_n_1 ,\counterR_reg[31]_i_3_n_2 ,\counterR_reg[31]_i_3_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[31]_i_3_n_4 ,\counterR_reg[31]_i_3_n_5 ,\counterR_reg[31]_i_3_n_6 ,\counterR_reg[31]_i_3_n_7 }),
+        .S(m_axis_tdata[31:28]));
   FDRE \counterR_reg[3] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[0]_i_1_n_4 ),
-        .Q(counterR_reg[3]),
-        .R(clear));
+        .D(\counterR_reg[3]_i_1_n_4 ),
+        .Q(m_axis_tdata[3]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[3]_i_1 
+       (.CI(1'b0),
+        .CO({\counterR_reg[3]_i_1_n_0 ,\counterR_reg[3]_i_1_n_1 ,\counterR_reg[3]_i_1_n_2 ,\counterR_reg[3]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b1}),
+        .O({\counterR_reg[3]_i_1_n_4 ,\counterR_reg[3]_i_1_n_5 ,\counterR_reg[3]_i_1_n_6 ,\counterR_reg[3]_i_1_n_7 }),
+        .S({m_axis_tdata[3:1],\counterR[3]_i_2_n_0 }));
   FDRE \counterR_reg[4] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[4]_i_1_n_7 ),
-        .Q(counterR_reg[4]),
-        .R(clear));
-  CARRY4 \counterR_reg[4]_i_1 
-       (.CI(\counterR_reg[0]_i_1_n_0 ),
-        .CO({\counterR_reg[4]_i_1_n_0 ,\counterR_reg[4]_i_1_n_1 ,\counterR_reg[4]_i_1_n_2 ,\counterR_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[4]_i_1_n_4 ,\counterR_reg[4]_i_1_n_5 ,\counterR_reg[4]_i_1_n_6 ,\counterR_reg[4]_i_1_n_7 }),
-        .S(counterR_reg[7:4]));
+        .D(\counterR_reg[7]_i_1_n_7 ),
+        .Q(m_axis_tdata[4]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[5] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[4]_i_1_n_6 ),
-        .Q(counterR_reg[5]),
-        .R(clear));
+        .D(\counterR_reg[7]_i_1_n_6 ),
+        .Q(m_axis_tdata[5]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[6] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[4]_i_1_n_5 ),
-        .Q(counterR_reg[6]),
-        .R(clear));
+        .D(\counterR_reg[7]_i_1_n_5 ),
+        .Q(m_axis_tdata[6]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[7] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[4]_i_1_n_4 ),
-        .Q(counterR_reg[7]),
-        .R(clear));
+        .D(\counterR_reg[7]_i_1_n_4 ),
+        .Q(m_axis_tdata[7]),
+        .R(\counterR[31]_i_1_n_0 ));
+  CARRY4 \counterR_reg[7]_i_1 
+       (.CI(\counterR_reg[3]_i_1_n_0 ),
+        .CO({\counterR_reg[7]_i_1_n_0 ,\counterR_reg[7]_i_1_n_1 ,\counterR_reg[7]_i_1_n_2 ,\counterR_reg[7]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\counterR_reg[7]_i_1_n_4 ,\counterR_reg[7]_i_1_n_5 ,\counterR_reg[7]_i_1_n_6 ,\counterR_reg[7]_i_1_n_7 }),
+        .S(m_axis_tdata[7:4]));
   FDRE \counterR_reg[8] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[8]_i_1_n_7 ),
-        .Q(counterR_reg[8]),
-        .R(clear));
-  CARRY4 \counterR_reg[8]_i_1 
-       (.CI(\counterR_reg[4]_i_1_n_0 ),
-        .CO({\counterR_reg[8]_i_1_n_0 ,\counterR_reg[8]_i_1_n_1 ,\counterR_reg[8]_i_1_n_2 ,\counterR_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\counterR_reg[8]_i_1_n_4 ,\counterR_reg[8]_i_1_n_5 ,\counterR_reg[8]_i_1_n_6 ,\counterR_reg[8]_i_1_n_7 }),
-        .S(counterR_reg[11:8]));
+        .D(\counterR_reg[11]_i_1_n_7 ),
+        .Q(m_axis_tdata[8]),
+        .R(\counterR[31]_i_1_n_0 ));
   FDRE \counterR_reg[9] 
        (.C(m_axis_aclk),
         .CE(counterR0),
-        .D(\counterR_reg[8]_i_1_n_6 ),
-        .Q(counterR_reg[9]),
-        .R(clear));
+        .D(\counterR_reg[11]_i_1_n_6 ),
+        .Q(m_axis_tdata[9]),
+        .R(\counterR[31]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[0]_INST_0 
-       (.I0(s_axis_tdata[0]),
-        .I1(counterR_reg[0]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[0]),
         .O(m_axis_tdata[0]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[10]_INST_0 
-       (.I0(s_axis_tdata[10]),
-        .I1(counterR_reg[10]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[10]),
         .O(m_axis_tdata[10]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[11]_INST_0 
-       (.I0(s_axis_tdata[11]),
-        .I1(counterR_reg[11]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[11]),
         .O(m_axis_tdata[11]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[12]_INST_0 
-       (.I0(s_axis_tdata[12]),
-        .I1(counterR_reg[12]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[12]),
         .O(m_axis_tdata[12]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[13]_INST_0 
-       (.I0(s_axis_tdata[13]),
-        .I1(counterR_reg[13]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[13]),
         .O(m_axis_tdata[13]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[14]_INST_0 
-       (.I0(s_axis_tdata[14]),
-        .I1(counterR_reg[14]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[14]),
         .O(m_axis_tdata[14]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[15]_INST_0 
-       (.I0(s_axis_tdata[15]),
-        .I1(counterR_reg[15]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[15]),
         .O(m_axis_tdata[15]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[16]_INST_0 
-       (.I0(s_axis_tdata[16]),
-        .I1(counterR_reg[16]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[16]),
         .O(m_axis_tdata[16]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[17]_INST_0 
-       (.I0(s_axis_tdata[17]),
-        .I1(counterR_reg[17]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[17]),
         .O(m_axis_tdata[17]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[18]_INST_0 
-       (.I0(s_axis_tdata[18]),
-        .I1(counterR_reg[18]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[18]),
         .O(m_axis_tdata[18]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[19]_INST_0 
-       (.I0(s_axis_tdata[19]),
-        .I1(counterR_reg[19]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[19]),
         .O(m_axis_tdata[19]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[1]_INST_0 
-       (.I0(s_axis_tdata[1]),
-        .I1(counterR_reg[1]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[1]),
         .O(m_axis_tdata[1]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[20]_INST_0 
-       (.I0(s_axis_tdata[20]),
-        .I1(counterR_reg[20]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[20]),
         .O(m_axis_tdata[20]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[21]_INST_0 
-       (.I0(s_axis_tdata[21]),
-        .I1(counterR_reg[21]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[21]),
         .O(m_axis_tdata[21]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[22]_INST_0 
-       (.I0(s_axis_tdata[22]),
-        .I1(counterR_reg[22]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[22]),
         .O(m_axis_tdata[22]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[23]_INST_0 
-       (.I0(s_axis_tdata[23]),
-        .I1(counterR_reg[23]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[23]),
         .O(m_axis_tdata[23]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[24]_INST_0 
-       (.I0(s_axis_tdata[24]),
-        .I1(counterR_reg[24]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[24]),
         .O(m_axis_tdata[24]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[25]_INST_0 
-       (.I0(s_axis_tdata[25]),
-        .I1(counterR_reg[25]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[25]),
         .O(m_axis_tdata[25]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[26]_INST_0 
-       (.I0(s_axis_tdata[26]),
-        .I1(counterR_reg[26]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[26]),
         .O(m_axis_tdata[26]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[27]_INST_0 
-       (.I0(s_axis_tdata[27]),
-        .I1(counterR_reg[27]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[27]),
         .O(m_axis_tdata[27]));
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[28]_INST_0 
-       (.I0(s_axis_tdata[28]),
-        .I1(counterR_reg[28]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[28]),
         .O(m_axis_tdata[28]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[29]_INST_0 
-       (.I0(s_axis_tdata[29]),
-        .I1(counterR_reg[29]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[29]),
         .O(m_axis_tdata[29]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[2]_INST_0 
-       (.I0(s_axis_tdata[2]),
-        .I1(counterR_reg[2]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[2]),
         .O(m_axis_tdata[2]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[30]_INST_0 
-       (.I0(s_axis_tdata[30]),
-        .I1(counterR_reg[30]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[30]),
         .O(m_axis_tdata[30]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[31]_INST_0 
-       (.I0(s_axis_tdata[31]),
-        .I1(counterR_reg[31]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[31]),
         .O(m_axis_tdata[31]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[3]_INST_0 
-       (.I0(s_axis_tdata[3]),
-        .I1(counterR_reg[3]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[3]),
         .O(m_axis_tdata[3]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[4]_INST_0 
-       (.I0(s_axis_tdata[4]),
-        .I1(counterR_reg[4]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[4]),
         .O(m_axis_tdata[4]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[5]_INST_0 
-       (.I0(s_axis_tdata[5]),
-        .I1(counterR_reg[5]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[5]),
         .O(m_axis_tdata[5]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[6]_INST_0 
-       (.I0(s_axis_tdata[6]),
-        .I1(counterR_reg[6]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[6]),
         .O(m_axis_tdata[6]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[7]_INST_0 
-       (.I0(s_axis_tdata[7]),
-        .I1(counterR_reg[7]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[7]),
         .O(m_axis_tdata[7]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[8]_INST_0 
-       (.I0(s_axis_tdata[8]),
-        .I1(counterR_reg[8]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[8]),
         .O(m_axis_tdata[8]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \m_axis_tdata[9]_INST_0 
-       (.I0(s_axis_tdata[9]),
-        .I1(counterR_reg[9]),
-        .I2(axi_en),
+       (.I0(axi_en),
+        .I1(s_axis_tdata[9]),
         .O(m_axis_tdata[9]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     m_axis_tlast_INST_0
-       (.I0(s_axis_tlast),
-        .I1(axi_en),
-        .I2(M_AXIS_TLAST),
+       (.I0(axi_en),
+        .I1(s_axis_tlast),
         .O(m_axis_tlast));
   CARRY4 packetCounter0_carry
        (.CI(1'b0),
-        .CO({NLW_packetCounter0_carry_CO_UNCONNECTED[3],M_AXIS_TLAST,packetCounter0_carry_n_2,packetCounter0_carry_n_3}),
+        .CO({NLW_packetCounter0_carry_CO_UNCONNECTED[3],m_axis_tlast,packetCounter0_carry_n_2,packetCounter0_carry_n_3}),
         .CYINIT(1'b1),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(NLW_packetCounter0_carry_O_UNCONNECTED[3:0]),
@@ -1049,41 +969,35 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
   LUT2 #(
     .INIT(4'h6)) 
     \packetCounter[6]_i_1 
-       (.I0(\packetCounter[7]_i_4_n_0 ),
+       (.I0(\packetCounter[7]_i_3_n_0 ),
         .I1(packetCounter_reg__0[6]),
         .O(plusOp__0[6]));
   LUT4 #(
     .INIT(16'h80FF)) 
     \packetCounter[7]_i_1 
-       (.I0(M_AXIS_TLAST),
+       (.I0(m_axis_tlast),
         .I1(tValidR),
         .I2(m_axis_tready),
         .I3(m_axis_aresetn),
         .O(\packetCounter[7]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \packetCounter[7]_i_2 
-       (.I0(tValidR),
-        .I1(m_axis_tready),
-        .O(counterR0));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h78)) 
-    \packetCounter[7]_i_3 
-       (.I0(\packetCounter[7]_i_4_n_0 ),
+    \packetCounter[7]_i_2 
+       (.I0(\packetCounter[7]_i_3_n_0 ),
         .I1(packetCounter_reg__0[6]),
         .I2(packetCounter_reg__0[7]),
         .O(plusOp__0[7]));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
-    \packetCounter[7]_i_4 
+    \packetCounter[7]_i_3 
        (.I0(packetCounter_reg__0[5]),
         .I1(packetCounter_reg__0[3]),
         .I2(packetCounter_reg__0[1]),
         .I3(packetCounter_reg__0[0]),
         .I4(packetCounter_reg__0[2]),
         .I5(packetCounter_reg__0[4]),
-        .O(\packetCounter[7]_i_4_n_0 ));
+        .O(\packetCounter[7]_i_3_n_0 ));
   FDRE \packetCounter_reg[0] 
        (.C(m_axis_aclk),
         .CE(counterR0),
@@ -1140,7 +1054,7 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
         .I2(sampleGeneratorEnR_i_3_n_0),
         .I3(m_axis_aresetn),
         .O(sampleGeneratorEnR_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'hFFEF)) 
     sampleGeneratorEnR_i_2
@@ -1149,7 +1063,7 @@ module design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS
         .I2(afterResetCycleCounterR_reg__0[5]),
         .I3(afterResetCycleCounterR_reg__0[1]),
         .O(sampleGeneratorEnR_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     sampleGeneratorEnR_i_3

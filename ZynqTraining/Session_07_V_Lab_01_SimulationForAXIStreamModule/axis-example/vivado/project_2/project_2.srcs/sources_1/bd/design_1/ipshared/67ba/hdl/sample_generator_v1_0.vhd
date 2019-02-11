@@ -122,10 +122,10 @@ sample_generator_v1_0_M_AXIS_inst : sample_generator_v1_0_M_AXIS
 		
 		M_AXIS_ACLK	=> m_axis_aclk,
 		M_AXIS_ARESETN	=> m_axis_aresetn,
-		M_AXIS_TVALID	=> m_axis_tvalidW,
-		M_AXIS_TDATA	=> m_axis_tdataW,
-		M_AXIS_TSTRB	=> m_axis_tstrbW,
-		M_AXIS_TLAST	=> m_axis_tlastW,
+		M_AXIS_TVALID	=> m_axis_tvalid,
+		M_AXIS_TDATA	=> m_axis_tdata,
+		M_AXIS_TSTRB	=> m_axis_tstrb,
+		M_AXIS_TLAST	=> m_axis_tlast,
 		M_AXIS_TREADY	=> m_axis_tready
 	);
 
