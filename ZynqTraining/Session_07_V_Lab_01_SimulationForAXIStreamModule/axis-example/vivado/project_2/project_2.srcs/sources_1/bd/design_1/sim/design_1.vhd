@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sat Feb  9 21:31:21 2019
---Host        : LAPTOP-QIAK00UP running 64-bit major release  (build 9200)
+--Date        : Thu Feb 14 14:31:02 2019
+--Host        : 63L-MT8825 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -29,10 +29,10 @@ entity design_1 is
     m_axis_aclk : in STD_LOGIC;
     s_axis_aresetn : in STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of design_1 : entity is "design_1.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
 
 architecture STRUCTURE of design_1 is
@@ -72,24 +72,24 @@ architecture STRUCTURE of design_1 is
   signal sample_generator_0_M_AXIS_TREADY : STD_LOGIC;
   signal sample_generator_0_M_AXIS_TSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal sample_generator_0_M_AXIS_TVALID : STD_LOGIC;
-  attribute x_interface_info : string;
-  attribute x_interface_info of M_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 M_AXIS TLAST";
-  attribute x_interface_info of M_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 M_AXIS TREADY";
-  attribute x_interface_info of M_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 M_AXIS TVALID";
-  attribute x_interface_info of S_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 S_AXIS TLAST";
-  attribute x_interface_info of S_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 S_AXIS TREADY";
-  attribute x_interface_info of S_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 S_AXIS TVALID";
-  attribute x_interface_info of m_axis_aclk : signal is "xilinx.com:signal:clock:1.0 CLK.M_AXIS_ACLK CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of m_axis_aclk : signal is "XIL_INTERFACENAME CLK.M_AXIS_ACLK, ASSOCIATED_BUSIF S_AXIS:M_AXIS, ASSOCIATED_RESET s_axis_aresetn, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
-  attribute x_interface_info of s_axis_aresetn : signal is "xilinx.com:signal:reset:1.0 RST.S_AXIS_ARESETN RST";
-  attribute x_interface_parameter of s_axis_aresetn : signal is "XIL_INTERFACENAME RST.S_AXIS_ARESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
-  attribute x_interface_info of M_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 M_AXIS TDATA";
-  attribute x_interface_parameter of M_AXIS_tdata : signal is "XIL_INTERFACENAME M_AXIS, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 1, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
-  attribute x_interface_info of M_AXIS_tstrb : signal is "xilinx.com:interface:axis:1.0 M_AXIS TSTRB";
-  attribute x_interface_info of S_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 S_AXIS TDATA";
-  attribute x_interface_parameter of S_AXIS_tdata : signal is "XIL_INTERFACENAME S_AXIS, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 0, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
-  attribute x_interface_info of S_AXIS_tstrb : signal is "xilinx.com:interface:axis:1.0 S_AXIS TSTRB";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of M_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 M_AXIS TLAST";
+  attribute X_INTERFACE_INFO of M_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 M_AXIS TREADY";
+  attribute X_INTERFACE_INFO of M_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 M_AXIS TVALID";
+  attribute X_INTERFACE_INFO of S_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 S_AXIS TLAST";
+  attribute X_INTERFACE_INFO of S_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 S_AXIS TREADY";
+  attribute X_INTERFACE_INFO of S_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 S_AXIS TVALID";
+  attribute X_INTERFACE_INFO of m_axis_aclk : signal is "xilinx.com:signal:clock:1.0 CLK.M_AXIS_ACLK CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of m_axis_aclk : signal is "XIL_INTERFACENAME CLK.M_AXIS_ACLK, ASSOCIATED_BUSIF S_AXIS:M_AXIS, ASSOCIATED_RESET s_axis_aresetn, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of s_axis_aresetn : signal is "xilinx.com:signal:reset:1.0 RST.S_AXIS_ARESETN RST";
+  attribute X_INTERFACE_PARAMETER of s_axis_aresetn : signal is "XIL_INTERFACENAME RST.S_AXIS_ARESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of M_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 M_AXIS TDATA";
+  attribute X_INTERFACE_PARAMETER of M_AXIS_tdata : signal is "XIL_INTERFACENAME M_AXIS, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 1, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of M_AXIS_tstrb : signal is "xilinx.com:interface:axis:1.0 M_AXIS TSTRB";
+  attribute X_INTERFACE_INFO of S_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 S_AXIS TDATA";
+  attribute X_INTERFACE_PARAMETER of S_AXIS_tdata : signal is "XIL_INTERFACENAME S_AXIS, CLK_DOMAIN design_1_m_axis_aclk, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 0, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of S_AXIS_tstrb : signal is "xilinx.com:interface:axis:1.0 S_AXIS TSTRB";
 begin
   M_AXIS_tdata(31 downto 0) <= sample_generator_0_M_AXIS_TDATA(31 downto 0);
   M_AXIS_tlast <= sample_generator_0_M_AXIS_TLAST;
