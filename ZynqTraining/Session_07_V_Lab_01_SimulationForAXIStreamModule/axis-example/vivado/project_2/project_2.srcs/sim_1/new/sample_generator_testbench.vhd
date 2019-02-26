@@ -81,11 +81,11 @@ architecture Behavioral of sample_generator_testbench is
 begin
  
   if s_axis_aresetn_s = '1' then -- start up state of reset if high
-    s_axis_aresetn_s <= '0'; -- put the reset low
-	m_axis_aclk_s <= '1'; -- kick start the clock
+    start_delaycount_s <= '0';
+	start_delayflag_s <= '0';
   end if;
   
-  if m_axis_aclk_s'event and m_axis_aclk_s = '1' then
+  if m_axis_aclk_s'event and m_axis_aclk_s = '1' and start_delayflag_s = '0' then
 	if(start_delaycount_s = 255) then	
 	    start_delayflag_s <= '1';
 	else
@@ -95,16 +95,7 @@ begin
  
   -- initialization of values
   if start_delayflag_s = '1' then
- 	s_axis_aresetn_s <= '0'; 
-    start_delaycount_s <= '0';
-	start_delayflag_s <= '0';
-	start_s <= '0';
-  end if;
-  
-  
-  
-  if(start_s = '0') then
-    start_s <= '1'
+
     axi_en_s <= '0';
     framesize_s <= '0';
   
@@ -117,6 +108,8 @@ begin
 
 
 end Behavioral;
+
+s_axis_aresetn_s <= s_axis_aresetn;
 
 m_axis_aclk_s <= '1' when m_axis_aclk = '1' and s_axis_aresetn_s = '0' else '0';
 	
