@@ -32,60 +32,136 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity sample_generator_testbench is
---  Port ( );
-  port (
-    axi_en : out STD_LOGIC;
-    en : out STD_LOGIC;
-    framesize : out STD_LOGIC_VECTOR ( 7 downto 0 );
-	
-    M_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXIS_tlast : in STD_LOGIC;
-    M_AXIS_tready : out STD_LOGIC; -- "a signal that we drive and should be a register that we drive"
-    M_AXIS_tstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXIS_tvalid : in STD_LOGIC;
-	
-    S_AXIS_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXIS_tlast : out STD_LOGIC;
-    S_AXIS_tready : in STD_LOGIC;
-    S_AXIS_tstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_tvalid : out STD_LOGIC;
+	generic (
+		-- Parameters of Axi Slave Bus Interface S_AXIS
+		C_S_AXIS_TDATA_WIDTH	: integer	:= 32;
 
-    aclk : out STD_LOGIC;
-    aresetn : out STD_LOGIC;
-  );
+		-- Parameters of Axi Master Bus Interface M_AXIS
+		C_M_AXIS_TDATA_WIDTH	: integer	:= 32;
+		C_M_AXIS_START_COUNT	: integer	:= 32
+	);
+--  Port ( );
+	port (
+		-- Users to add ports here
+        framesize : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
+		en : in std_logic; -- MT
+		axi_en : in std_logic; -- MT
+		-- User ports ends
+		-- Do not modify the ports beyond this line
+
+		-- Ports of Axi Slave Bus Interface S_AXIS
+		s_axis_aclk	: in std_logic; 
+		s_axis_aresetn	: in std_logic;
+		s_axis_tready	: out std_logic;
+		s_axis_tdata	: in std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
+		s_axis_tstrb	: in std_logic_vector((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0);
+		s_axis_tlast	: in std_logic;
+		s_axis_tvalid	: in std_logic;
+
+		-- Ports of Axi Master Bus Interface M_AXIS
+		m_axis_aclk	: in std_logic;
+		m_axis_aresetn	: in std_logic;
+		m_axis_tvalid	: out std_logic;
+		m_axis_tdata	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
+		m_axis_tstrb	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
+		m_axis_tlast	: out std_logic;
+		m_axis_tready	: in std_logic
+	);
+
 end entity sample_generator_testbench;
 
 architecture Behavioral of sample_generator_testbench is
+    --general signals
+    signal framesize_s : STD_LOGIC_VECTOR ((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
+	signal en_s : STD_LOGIC:='0';
     signal axi_en_s : STD_LOGIC:='0';
-    signal en_s : STD_LOGIC:='0';
-    signal framesize_s : STD_LOGIC_VECTOR ( 7 downto 0 );
-	--master port
-    signal M_AXIS_tdata_s : STD_LOGIC_VECTOR ( 31 downto 0 ) := (others => '0');
-    signal M_AXIS_tlast_s : STD_LOGIC:='0';
-    signal M_AXIS_tready_s : STD_LOGIC:= '0';
-    signal M_AXIS_tstrb_s : STD_LOGIC_VECTOR ( 3 downto 0 ) := (others => '0');
-    signal M_AXIS_tvalid_s : STD_LOGIC:='0';
-	--slave port
-    signal S_AXIS_tdata_s : STD_LOGIC_VECTOR ( 31 downto 0 ) := (others => '0');
-    signal S_AXIS_tlast_s : STD_LOGIC:='0';
-    --S_AXIS_tready_s : STD_LOGIC;
-    signal S_AXIS_tstrb_s : STD_LOGIC_VECTOR ( 3 downto 0 ) := (others => '0');
-    signal S_AXIS_tvalid_s : STD_LOGIC:='0';
-  
-    signal aclk_s : STD_LOGIC:='0';
-    signal aresetn_s : STD_LOGIC:='1';	
 	
+	--slave port
+	signal s_axis_aclk_s : STD_LOGIC:='0';
+	signal s_axis_aresetn_s : STD_LOGIC:='0';
+	signal s_axis_tready_s : STD_LOGIC:='0';	
+    signal s_axis_tdata_s : STD_LOGIC_VECTOR (C_S_AXIS_TDATA_WIDTH-1 downto 0);
+    signal s_axis_tstrb_s : STD_LOGIC_VECTOR ((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0);
+    signal s_axis_tlast_s : STD_LOGIC:='0';
+    signal s_axis_tvalid_s : STD_LOGIC:='0';	
+
+	--master port
+    signal m_axis_aclk_s : STD_LOGIC:='0';
+    signal m_axis_aresetn_s : STD_LOGIC:='1';	
+    signal m_axis_tvalid_s : STD_LOGIC:='0';	
+    signal m_axis_tdata_s : STD_LOGIC_VECTOR (C_S_AXIS_TDATA_WIDTH-1 downto 0);
+    signal m_axis_tstrb_s : STD_LOGIC_VECTOR ((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0);	
+    signal m_axis_tlast_s : STD_LOGIC:='0';
+    signal m_axis_tready_s : STD_LOGIC:= '0';
+
+	-- Our signals
 	signal start_s : STD_LOGIC:='0';
 	signal start_delaycount_s : INTEGER:=0;	
 	signal start_delayflag_s : STD_LOGIC:='0';
-
     signal aclk_scale_s : INTEGER:=0;
     signal aclkedge_s2 : STD_LOGIC:='0';
+	
+	
+component sample_generator_v1_0 is
+    port(	
+		-- Users to add ports here
+        framesize : in std_logic_vector((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
+		en : in std_logic; -- MT
+		axi_en : in std_logic; -- MT
+		-- User ports ends
+		-- Do not modify the ports beyond this line
+
+		-- Ports of Axi Slave Bus Interface S_AXIS
+		s_axis_aclk	: in std_logic; 
+		s_axis_aresetn	: in std_logic;
+		s_axis_tready	: out std_logic;
+		s_axis_tdata	: in std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
+		s_axis_tstrb	: in std_logic_vector((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0);
+		s_axis_tlast	: in std_logic;
+		s_axis_tvalid	: in std_logic;
+
+		-- Ports of Axi Master Bus Interface M_AXIS
+		m_axis_aclk	: in std_logic;
+		m_axis_aresetn	: in std_logic;
+		m_axis_tvalid	: out std_logic;
+		m_axis_tdata	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
+		m_axis_tstrb	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
+		m_axis_tlast	: out std_logic;
+		m_axis_tready	: in std_logic
+	);
+end component;
 
 begin
- FN : process(aclkedge_s2, aresetn_s) 
+
+
+sample_generator_v1_0_X : sample_generator_v1_0
+
+    port map
+	(
+      framesize ((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0) => framesize_s ((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0),
+      en => en_s,
+      axi_en => axi_en_s,
+
+	  s_axis_aclk => s_axis_aclk_s, 	
+	  s_axis_aresetn => s_axis_aresetn_s,
+	  s_axis_tready => s_axis_tready_s, 
+      s_axis_tdata(C_S_AXIS_TDATA_WIDTH-1 downto 0) => s_axis_tdata_s(C_S_AXIS_TDATA_WIDTH-1 downto 0),
+      s_axis_tstrb((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0) => s_axis_tstrb_s((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0),
+	  s_axis_tlast => s_axis_tlast_s,
+	  s_axis_tvalid => s_axis_tvalid_s,
+
+	  m_axis_aclk => m_axis_aclk_s,
+	  m_axis_aresetn => m_axis_aresetn_s,
+	  m_axis_tvalid => m_axis_tvalid_s,
+	  m_axis_tdata (C_M_AXIS_TDATA_WIDTH-1 downto 0) => m_axis_tdata_s(C_M_AXIS_TDATA_WIDTH-1 downto 0),
+	  m_axis_tstrb ((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => m_axis_tstrb_s((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0),
+	  m_axis_tlast => m_axis_tlast_s,
+	  m_axis_tready => m_axis_tready_s		
+	);
+
+ FN : process(aclkedge_s2, s_axis_aresetn_s) 
  begin
-   if aresetn_s = '1' then -- start up state of reset if high
+   if s_axis_aresetn_s = '1' then -- start up state of reset if high
     start_delaycount_s <= 0;
 	start_delayflag_s <= '0';
   end if;
@@ -108,14 +184,16 @@ begin
     S_AXIS_tlast_s <= '0';
     S_AXIS_tstrb_s <= (others => '0');
     S_AXIS_tvalid_s <= '0';
+	
+	en_s <= '1';
   end if;    
 
 end process FN;
 
 
-CLK : process(aclk_s) 
+CLK : process(s_axis_aclk_s) 
 begin
-    if aclk_s = '1' then
+    if s_axis_aclk_s = '1' then
       if aclk_scale_s > 250 then
 	    aclk_scale_s <= 0;
 	    aclkedge_s2 <= '1';
@@ -125,34 +203,5 @@ begin
 	  end if;
 	end if;
 end process CLK;
-
-
-aresetn <= aresetn_s;
-
-aclk_s <= '1' when aclk_s = '1' and aresetn_s = '0' else '0';
-
-
-	
-axi_en <= axi_en_s;
-en <= en_s;
-framesize ( 7 downto 0 ) <= framesize_s ( 7 downto 0 );
-
---master port
-M_AXIS_tdata_s <= M_AXIS_tdata;
-M_AXIS_tlast_s <= M_AXIS_tlast;
-M_AXIS_tready <= M_AXIS_tready_s;
-M_AXIS_tstrb_s (3 downto 0) <= M_AXIS_tdata ( 3 downto 0 );
-M_AXIS_tvalid_s <= M_AXIS_tvalid;
-
---slave port
-S_AXIS_tdata (31 downto 0) <= S_AXIS_tdata_s ( 31 downto 0 );
-S_AXIS_tlast <= S_AXIS_tlast_s;
---S_AXIS_tready_s <= S_AXIS_tready;
-S_AXIS_tstrb ( 3 downto 0 ) <= S_AXIS_tstrb_s ( 3 downto 0 );
-S_AXIS_tvalid <= S_AXIS_tvalid_s;
-  
---misc port
-aclk <= aclk_s;
-aresetn <= aresetn_s;
 
 end Behavioral;
