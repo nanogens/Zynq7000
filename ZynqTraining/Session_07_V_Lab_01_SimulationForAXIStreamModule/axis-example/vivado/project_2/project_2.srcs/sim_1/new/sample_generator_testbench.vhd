@@ -69,6 +69,10 @@ entity sample_generator_testbench is
 	);
 end entity sample_generator_testbench;
 
+
+
+
+
 architecture Behavioral of sample_generator_testbench is
     --general signals
     signal framesize_s : STD_LOGIC_VECTOR ((C_M_AXIS_TDATA_WIDTH/4)-1 downto 0);
@@ -100,6 +104,8 @@ architecture Behavioral of sample_generator_testbench is
     signal aclk_scale_s : INTEGER:=0;
     signal aclkedge_s2 : STD_LOGIC:='0';
 	
+
+    constant clk_period : time := 10 ns;	
 	
 component design_1_wrapper is
     port(	
@@ -149,23 +155,10 @@ design_1_wrapper_X : design_1_wrapper
 	  M_AXIS_tready => m_axis_tready_s		
 	);
 
- FN : process(aclkedge_s2, s_axis_aresetn_s) 
- begin
-   if s_axis_aresetn_s = '1' then -- start up state of reset if high
-    start_delaycount_s <= 0;
-	start_delayflag_s <= '0';
-  end if;
-  
-  if aclkedge_s2'event and aclkedge_s2 = '1' and start_delayflag_s = '0' then
-	if start_delaycount_s = 255 then	
-	    start_delayflag_s <= '1';
-	else
-        start_delaycount_s <= start_delaycount_s + 1;	
-	end if;
-  end if; 
- 
+ FN : process(aclkedge_s2) 
+ begin 
   -- initialization of values
-  if start_delayflag_s = '1' then
+  if aclkedge_s2'event and aclkedge_s2 = '1' and m_axis_aresetn_s = '0' then
 
     axi_en_s <= '0';
     framesize_s <= x"10";
@@ -181,17 +174,31 @@ design_1_wrapper_X : design_1_wrapper
 end process FN;
 
 
-CLK : process(m_axis_aclk_s) 
+CLK_SCALE : process(m_axis_aclk_s) 
 begin
     if m_axis_aclk_s = '1' then
+      aclk_scale_s <= aclk_scale_s + 1;
       if aclk_scale_s > 250 then
 	    aclk_scale_s <= 0;
-	    aclkedge_s2 <= '1';
-	  else 
-	    aclk_scale_s <= aclk_scale_s + 1;
-	    aclkedge_s2 <= '0';
+	    aclkedge_s2 <= not aclkedge_s2;
 	  end if;
 	end if;
-end process CLK;
+end process CLK_SCALE;
+
+ -- CLOCK process definitions( clock with 50% duty cycle is generated here.
+CLOCK : process
+begin
+    m_axis_aclk_s <= '0';
+    wait for clk_period/2;  --for 0.5 ns signal is '0'.
+    m_axis_aclk_s <= '1';
+    wait for clk_period/2;  --for next 0.5 ns signal is '1'.
+
+	m_axis_aresetn_s <= '0';
+end process;
 
 end Behavioral;
+
+
+
+
+
