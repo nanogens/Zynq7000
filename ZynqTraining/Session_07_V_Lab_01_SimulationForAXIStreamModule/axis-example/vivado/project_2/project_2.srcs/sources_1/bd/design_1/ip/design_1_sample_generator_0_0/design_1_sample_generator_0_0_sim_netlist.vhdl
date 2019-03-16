@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sat Feb  9 20:55:38 2019
--- Host        : LAPTOP-QIAK00UP running 64-bit major release  (build 9200)
+-- Date        : Fri Mar 15 20:26:15 2019
+-- Host        : 63L-MT8825 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top design_1_sample_generator_0_0 -prefix
 --               design_1_sample_generator_0_0_ design_1_sample_generator_0_0_sim_netlist.vhdl
 -- Design      : design_1_sample_generator_0_0

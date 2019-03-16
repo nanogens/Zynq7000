@@ -36,7 +36,7 @@ entity sample_generator_v1_0 is
 		s_axis_tvalid	: in std_logic;
 
 		-- Ports of Axi Master Bus Interface M_AXIS
-		m_axis_aclk	: in std_logic;
+		m_axis_aclk	: out std_logic;
 		m_axis_aresetn	: in std_logic;
 		m_axis_tvalid	: out std_logic;
 		m_axis_tdata	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
@@ -138,6 +138,8 @@ sample_generator_v1_0_M_AXIS_inst : sample_generator_v1_0_M_AXIS
 	m_axis_tlast <= s_axis_tlast when axi_en = '1' else m_axis_tlastW;		
 	
 	s_axis_tready <= m_axis_tready;  -- master tready tells the slave it is ready
-	-- User logic ends
+
+	-- clock
+	m_axis_aclk <= s_axis_aclk;
 
 end arch_imp;
