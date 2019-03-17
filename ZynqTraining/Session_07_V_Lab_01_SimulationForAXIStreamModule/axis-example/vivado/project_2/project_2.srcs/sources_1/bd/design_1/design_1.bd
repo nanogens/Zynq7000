@@ -183,16 +183,16 @@
       }
     },
     "interface_nets": {
-      "sample_generator_0_M_AXIS": {
-        "interface_ports": [
-          "M_AXIS",
-          "sample_generator_0/M_AXIS"
-        ]
-      },
       "S_AXIS_1": {
         "interface_ports": [
           "S_AXIS",
           "sample_generator_0/S_AXIS"
+        ]
+      },
+      "sample_generator_0_M_AXIS": {
+        "interface_ports": [
+          "M_AXIS",
+          "sample_generator_0/M_AXIS"
         ]
       }
     },
