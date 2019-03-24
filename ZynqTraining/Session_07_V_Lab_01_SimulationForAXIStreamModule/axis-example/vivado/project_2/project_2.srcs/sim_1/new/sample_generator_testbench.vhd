@@ -135,9 +135,9 @@ design_1_wrapper_X : design_1_wrapper
 	  S_AXIS_tvalid => s_axis_tvalid_s,
 
 	  m_axis_aclk => m_axis_aclk_s,
-	  M_AXIS_tvalid => m_axis_tvalid_s,
+	  --M_AXIS_tvalid => m_axis_tvalid_s,
 	  M_AXIS_tdata (C_M_AXIS_TDATA_WIDTH-1 downto 0) => m_axis_tdata_s(C_M_AXIS_TDATA_WIDTH-1 downto 0),
-	  M_AXIS_tstrb ((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => m_axis_tstrb_s((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0),
+	  --M_AXIS_tstrb ((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => m_axis_tstrb_s((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0),
 	  M_AXIS_tlast => m_axis_tlast_s,
 	  M_AXIS_tready => m_axis_tready_s		
 	);
@@ -157,7 +157,7 @@ design_1_wrapper_X : design_1_wrapper
 	
 	--m_axis_tvalid_s <= '0';
 	--m_axis_tdata_s <= (others => '0');
-	--m_axis_tstrb_s <= (others => '0');
+	m_axis_tstrb_s <= (others => '0');
 	
 	en_s <= '1';
   end if;    
@@ -185,6 +185,8 @@ begin
     wait for clk_period/2;  --for next 0.5 ns signal is '1'.
 	m_axis_aresetn_s <= '0';
 end process;
+
+
 
 end Behavioral;
 

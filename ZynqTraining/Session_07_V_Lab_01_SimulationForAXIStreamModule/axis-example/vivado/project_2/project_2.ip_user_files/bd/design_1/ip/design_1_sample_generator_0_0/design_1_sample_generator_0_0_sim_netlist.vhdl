@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Mar 15 20:26:15 2019
+-- Date        : Sun Mar 24 19:10:49 2019
 -- Host        : 63L-MT8825 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top design_1_sample_generator_0_0 -prefix
---               design_1_sample_generator_0_0_ design_1_sample_generator_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/design_1_sample_generator_0_0_sim_netlist.vhdl
 -- Design      : design_1_sample_generator_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,6 +27,8 @@ entity design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS is
     s_axis_tlast : in STD_LOGIC;
     s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS : entity is "sample_generator_v1_0_M_AXIS";
 end design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS;
 
 architecture STRUCTURE of design_1_sample_generator_0_0_sample_generator_v1_0_M_AXIS is
@@ -1354,6 +1356,8 @@ entity design_1_sample_generator_0_0_sample_generator_v1_0 is
     s_axis_tlast : in STD_LOGIC;
     s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_sample_generator_0_0_sample_generator_v1_0 : entity is "sample_generator_v1_0";
 end design_1_sample_generator_0_0_sample_generator_v1_0;
 
 architecture STRUCTURE of design_1_sample_generator_0_0_sample_generator_v1_0 is

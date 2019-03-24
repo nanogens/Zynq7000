@@ -2,8 +2,8 @@
 # Webtalk v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Mar 17 19:36:44 2019
-# Process ID: 488180
+# Start of session at: Sun Mar 24 17:35:52 2019
+# Process ID: 49592
 # Current directory: D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/sample_generator_testbench_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.sim/sim_1/behav/xsim/webtalk.log

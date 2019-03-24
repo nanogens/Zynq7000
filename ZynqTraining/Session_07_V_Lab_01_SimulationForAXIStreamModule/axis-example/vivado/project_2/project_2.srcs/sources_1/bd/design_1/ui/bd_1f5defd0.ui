@@ -12,12 +12,12 @@ preplace portBus framesize -pg 1 -y 90 -defaultsOSRD
 preplace inst sample_generator_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
 preplace netloc framesize_1 1 0 1 -70J
 preplace netloc en_1 1 0 1 -80J
-preplace netloc sample_generator_0_M_AXIS 1 1 1 280
+preplace netloc sample_generator_0_M_AXIS 1 1 1 180
 preplace netloc axi_en_1 1 0 1 -90J
 preplace netloc m_axis_aclk_1 1 0 1 -100
 preplace netloc S_AXIS_1 1 0 1 -60J
 preplace netloc s_axis_aresetn_1 1 0 1 -110
-levelinfo -pg 1 -130 110 300 -top 0 -bot 410
+levelinfo -pg 1 -130 60 200 -top 0 -bot 460
 "
 }
 0

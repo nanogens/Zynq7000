@@ -114,7 +114,7 @@ architecture implementation of sample_generator_v1_0_M_AXIS is
 	
 	M_AXIS_TDATA <= counterR; -- connected, indicating the end of the frame/packet of data
 	--M_AXIS_TSTRB <= ( ( (C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) => '1');  -- (others => '1');  -- he set only C_M_AXIS_TDATA_WIDTH/8 bits to '1'
-	M_AXIS_TSTRB((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) <= (others => '1');
+	--M_AXIS_TSTRB((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) <= (others => '1');
 
 	M_AXIS_TLAST <= '1' when to_integer(unsigned(packetCounter)) = to_integer(unsigned(FRAMESIZE)) - 1 else '0';
 	

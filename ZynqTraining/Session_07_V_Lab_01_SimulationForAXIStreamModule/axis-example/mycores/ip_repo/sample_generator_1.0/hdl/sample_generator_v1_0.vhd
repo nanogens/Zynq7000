@@ -54,7 +54,7 @@ architecture arch_imp of sample_generator_v1_0 is
 		C_S_AXIS_TDATA_WIDTH	: integer	:= 32
 		);
 		port (
-		--AXI_EN : in std_logic;
+		AXI_EN : in std_logic;
 		
 		S_AXIS_ACLK	: in std_logic;
 		S_AXIS_ARESETN	: in std_logic;
@@ -87,8 +87,8 @@ architecture arch_imp of sample_generator_v1_0 is
 	end component sample_generator_v1_0_M_AXIS;
 	
     signal m_axis_tvalidW : std_logic := '0';
-    signal m_axis_tdataW : std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0); -- need to set this to all zeros for instantiation if its not already being automatially done
-	signal m_axis_tstrbW : std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0); -- need to set this to all zeros for instantiation if its not already being automatially done
+    signal m_axis_tdataW : std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0) := (others => '0'); -- need to set this to all zeros for instantiation if its not already being automatially done
+	signal m_axis_tstrbW : std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0) := (others => '0'); -- need to set this to all zeros for instantiation if its not already being automatially done
 	signal m_axis_tlastW : std_logic := '0';
 	
 begin
@@ -117,7 +117,7 @@ sample_generator_v1_0_M_AXIS_inst : sample_generator_v1_0_M_AXIS
 	)
 	port map (
 	    FRAMESIZE => framesize, 
-		--AXI_EN => axi_en,
+		AXI_EN => axi_en,
 		EN => en, 
 		
 		M_AXIS_ACLK	=> m_axis_aclk,
@@ -139,6 +139,7 @@ sample_generator_v1_0_M_AXIS_inst : sample_generator_v1_0_M_AXIS
 	
 	s_axis_tready <= m_axis_tready;  -- master tready tells the slave it is ready
 
+	
 	-- clock
 	m_axis_aclk <= s_axis_aclk;
 

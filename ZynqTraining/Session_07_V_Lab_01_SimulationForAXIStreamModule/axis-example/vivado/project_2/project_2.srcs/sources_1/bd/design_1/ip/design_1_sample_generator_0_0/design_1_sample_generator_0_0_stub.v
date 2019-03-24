@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Mar 15 20:26:15 2019
+// Date        : Sun Mar 24 19:10:49 2019
 // Host        : 63L-MT8825 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_sample_generator_0_0 -prefix
-//               design_1_sample_generator_0_0_ design_1_sample_generator_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/design_1_sample_generator_0_0_stub.v
 // Design      : design_1_sample_generator_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
