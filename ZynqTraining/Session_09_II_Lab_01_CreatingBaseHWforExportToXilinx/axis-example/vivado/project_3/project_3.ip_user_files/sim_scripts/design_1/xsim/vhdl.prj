@@ -1,0 +1,16 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd" \
+"../../../bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_S_AXIS.vhd" \
+"../../../bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_sim_netlist.vhdl" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_sim_netlist.vhdl" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_sim_netlist.vhdl" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_2/sim/design_1_rst_ps7_0_100M_2.vhd" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/design_1_axi_smc_1_sim_netlist.vhdl" \
+"../../../bd/design_1/sim/design_1.vhd" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_sim_netlist.vhdl" \
+
+nosort

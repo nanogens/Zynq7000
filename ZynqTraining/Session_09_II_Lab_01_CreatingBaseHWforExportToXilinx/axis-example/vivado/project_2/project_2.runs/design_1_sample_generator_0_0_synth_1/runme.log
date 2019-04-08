@@ -1,0 +1,373 @@
+
+*** Running vivado
+    with args -log design_1_sample_generator_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sample_generator_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_sample_generator_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/mycores/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.cache/ip 
+Command: synth_design -top design_1_sample_generator_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 53408 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 397.211 ; gain = 96.949
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-2048] function clogb2 does not always return a value [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_S_AXIS.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'design_1_sample_generator_0_0' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:78]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'sample_generator_v1_0' declared at 'd:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:5' bound to instance 'U0' of component 'sample_generator_v1_0' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'sample_generator_v1_0_M_AXIS' declared at 'd:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:5' bound to instance 'sample_generator_v1_0_M_AXIS_inst' of component 'sample_generator_v1_0_M_AXIS' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0_M_AXIS' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:41]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+WARNING: [Synth 8-3848] Net M_AXIS_TVALID in module/entity sample_generator_v1_0_M_AXIS does not have driver. [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0_M_AXIS' (1#1) [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:41]
+WARNING: [Synth 8-3848] Net m_axis_tdataW in module/entity sample_generator_v1_0 does not have driver. [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:90]
+WARNING: [Synth 8-3848] Net m_axis_tstrbW in module/entity sample_generator_v1_0 does not have driver. [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0' (2#1) [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'design_1_sample_generator_0_0' (3#1) [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:78]
+WARNING: [Synth 8-3331] design sample_generator_v1_0_M_AXIS has unconnected port M_AXIS_TVALID
+WARNING: [Synth 8-3331] design sample_generator_v1_0 has unconnected port s_axis_aclk
+WARNING: [Synth 8-3331] design sample_generator_v1_0 has unconnected port s_axis_aresetn
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 451.172 ; gain = 150.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 451.172 ; gain = 150.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 451.172 ; gain = 150.910
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-5546] ROM "sampleGeneratorEnR" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 451.172 ; gain = 150.910
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module sample_generator_v1_0_M_AXIS 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module sample_generator_v1_0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "U0/sample_generator_v1_0_M_AXIS_inst/sampleGeneratorEnR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3917] design design_1_sample_generator_0_0 has port m_axis_tstrb[3] driven by constant 1
+INFO: [Synth 8-3917] design design_1_sample_generator_0_0 has port m_axis_tstrb[2] driven by constant 1
+INFO: [Synth 8-3917] design design_1_sample_generator_0_0 has port m_axis_tstrb[1] driven by constant 1
+INFO: [Synth 8-3917] design design_1_sample_generator_0_0 has port m_axis_tstrb[0] driven by constant 1
+WARNING: [Synth 8-3331] design design_1_sample_generator_0_0 has unconnected port s_axis_aclk
+WARNING: [Synth 8-3331] design design_1_sample_generator_0_0 has unconnected port s_axis_aresetn
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[3] with 1st driver pin 'U0/m_axis_tstrb_inferred/m_axis_tstrb_reg[3]' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[3] with 2nd driver pin 'VCC' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net m_axis_tstrb_reg[3] is connected to at least one constant driver which has been preserved, other driver is ignored [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[2] with 1st driver pin 'U0/m_axis_tstrb_inferred/m_axis_tstrb_reg[2]' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[2] with 2nd driver pin 'VCC' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net m_axis_tstrb_reg[2] is connected to at least one constant driver which has been preserved, other driver is ignored [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[1] with 1st driver pin 'U0/m_axis_tstrb_inferred/m_axis_tstrb_reg[1]' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[1] with 2nd driver pin 'VCC' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net m_axis_tstrb_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[0] with 1st driver pin 'U0/m_axis_tstrb_inferred/m_axis_tstrb_reg[0]' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tstrb_reg[0] with 2nd driver pin 'VCC' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net m_axis_tstrb_reg[0] is connected to at least one constant driver which has been preserved, other driver is ignored [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:127]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 591.109 ; gain = 290.848
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 591.109 ; gain = 290.848
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[31] with 1st driver pin 'i_33/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[31] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[31]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[30] with 1st driver pin 'i_34/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[30] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[30]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[29] with 1st driver pin 'i_35/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[29] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[29]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[28] with 1st driver pin 'i_36/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[28] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[28]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[27] with 1st driver pin 'i_37/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[27] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[27]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[26] with 1st driver pin 'i_38/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[26] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[26]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[25] with 1st driver pin 'i_39/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[25] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[25]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[24] with 1st driver pin 'i_40/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[24] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[24]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[23] with 1st driver pin 'i_41/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[23] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[23]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[22] with 1st driver pin 'i_42/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[22] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[22]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[21] with 1st driver pin 'i_43/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[21] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[21]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[20] with 1st driver pin 'i_44/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[20] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[20]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[19] with 1st driver pin 'i_45/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[19] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[19]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[18] with 1st driver pin 'i_46/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[18] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[18]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[17] with 1st driver pin 'i_47/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[17] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[17]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[16] with 1st driver pin 'i_48/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[16] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[16]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[15] with 1st driver pin 'i_49/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[15] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[15]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[14] with 1st driver pin 'i_50/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[14] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[14]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[13] with 1st driver pin 'i_51/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[13] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[13]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[12] with 1st driver pin 'i_52/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[12] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[12]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[11] with 1st driver pin 'i_53/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[11] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[11]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[10] with 1st driver pin 'i_54/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[10] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[10]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[9] with 1st driver pin 'i_55/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[9] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[9]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[8] with 1st driver pin 'i_56/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[8] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[8]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[7] with 1st driver pin 'i_57/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[7] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[7]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[6] with 1st driver pin 'i_58/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[6] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[6]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[5] with 1st driver pin 'i_59/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[5] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[5]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[4] with 1st driver pin 'i_60/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[4] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[4]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[3] with 1st driver pin 'i_61/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[3] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[3]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[2] with 1st driver pin 'i_62/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[2] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[2]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[1] with 1st driver pin 'i_63/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[1] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[1]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[0] with 1st driver pin 'i_64/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tdata[0] with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/counterR_reg[0]/Q' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tlast with 1st driver pin 'i_32/O' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin m_axis_tlast with 2nd driver pin 'U0/sample_generator_v1_0_M_AXIS_inst/packetCounter0_carry/CO[2]' [d:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:65]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       33|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     9|
+|2     |LUT1   |     5|
+|3     |LUT2   |    39|
+|4     |LUT3   |     4|
+|5     |LUT4   |     8|
+|6     |LUT5   |     4|
+|7     |LUT6   |     7|
+|8     |FDRE   |    50|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-----------------------------+------+
+|      |Instance                              |Module                       |Cells |
++------+--------------------------------------+-----------------------------+------+
+|1     |top                                   |                             |   126|
+|2     |  U0                                  |sample_generator_v1_0        |   125|
+|3     |    sample_generator_v1_0_M_AXIS_inst |sample_generator_v1_0_M_AXIS |   125|
++------+--------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 78 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 592.117 ; gain = 291.855
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 695.414 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+26 Infos, 10 Warnings, 78 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 695.414 ; gain = 403.422
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 695.414 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.runs/design_1_sample_generator_0_0_synth_1/design_1_sample_generator_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1180.121 ; gain = 484.707
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_sample_generator_0_0, cache-ID = c1adc2597a25c49e
+INFO: [Coretcl 2-1174] Renamed 2 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1184.320 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Github/Zynq7000/ZynqTraining/Session_07_V_Lab_01_SimulationForAXIStreamModule/axis-example/vivado/project_2/project_2.runs/design_1_sample_generator_0_0_synth_1/design_1_sample_generator_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_sample_generator_0_0_utilization_synth.rpt -pb design_1_sample_generator_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 24 19:10:49 2019...

@@ -1,0 +1,56 @@
+
+*** Running vivado
+    with args -log design_1_sample_generator_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sample_generator_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_sample_generator_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/mycores/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.cache/ip 
+Command: synth_design -top design_1_sample_generator_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 859232 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 400.570 ; gain = 102.188
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-2048] function clogb2 does not always return a value [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_S_AXIS.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'design_1_sample_generator_0_0' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:78]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'sample_generator_v1_0' declared at 'd:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:5' bound to instance 'U0' of component 'sample_generator_v1_0' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'sample_generator_v1_0_M_AXIS' declared at 'd:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:5' bound to instance 'sample_generator_v1_0_M_AXIS_inst' of component 'sample_generator_v1_0_M_AXIS' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0_M_AXIS' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:42]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+WARNING: [Synth 8-3848] Net M_AXIS_TVALID in module/entity sample_generator_v1_0_M_AXIS does not have driver. [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:30]
+WARNING: [Synth 8-3848] Net M_AXIS_TSTRB in module/entity sample_generator_v1_0_M_AXIS does not have driver. [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0_M_AXIS' (1#1) [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0_M_AXIS.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0' (2#1) [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ipshared/67ba/hdl/sample_generator_v1_0.vhd:49]
+ERROR: [Synth 8-547] port direction mismatch for port 'm_axis_aclk' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:134]
+ERROR: [Synth 8-285] failed synthesizing module 'design_1_sample_generator_0_0' [d:/Github/Zynq7000/ZynqTraining/Session_09_II_Lab_01_CreatingBaseHWforExportToXilinx/axis-example/vivado/project_3/project_3.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.vhd:78]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 453.984 ; gain = 155.602
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 4 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  7 20:29:39 2019...
